@@ -6,7 +6,7 @@ on:
       - v*
 
 jobs:
-  publish-hello-world-image:
+  build-publish-docker-images:
     runs-on: ubuntu-latest
 
     steps:
