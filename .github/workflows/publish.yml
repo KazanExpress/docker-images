@@ -16,7 +16,16 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Build the hello-world Docker image
+    - name: Build Docker images
       run: |
-        docker build . --tag ghcr.io/kazanexpress/hello-world:latest
-        docker push ghcr.io/kazanexpress/hello-world:latest
+        cd dockerfiles
+        for dir in */; do
+          cd "$dir"
+
+          app=$(basename "$dir")
+          docker build . --tag ghcr.io/kazanexpress/$app:latest
+          docker push ghcr.io/kazanexpress/$app:latest
+
+          cd ..
+        done
+       
