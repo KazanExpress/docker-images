@@ -19,5 +19,4 @@ jobs:
     - name: Build the hello-world Docker image
       run: |
         docker build . --tag ghcr.io/kazanexpress/hello-world:latest
-        docker run ghcr.io/kazanexpress/hello-world:latest
         docker push ghcr.io/kazanexpress/hello-world:latest
