@@ -29,7 +29,7 @@ jobs:
         SOURCE_TAG: ${{ steps.branch_name.outputs.SOURCE_TAG }}
       run: |
         cd dockerfiles
-        dirs=$(git diff $(git describe --tags --abbrev=0)..HEAD --name-only | grep dockerfiles | awk -F / '{ print $(NF-1) }' | uniq )
+        dirs=$(git tag -l | tail -2 | tr '\n' ' ' | xargs -n2 git diff --name-only | grep dockerfiles | awk -F / '{ print $(NF-1) }' | uniq )
         for dir in $dirs; do
           cd "$dir"
 
