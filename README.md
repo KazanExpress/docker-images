@@ -34,3 +34,7 @@ ghcr.io/kazanexpress/kafka-connect:v1.6.1
 ghcr.io/kazanexpress/github-cli:v1
 ghcr.io/kazanexpress/github-cli:v2
 ```
+
+## Conventions
+
+We follow [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/) rules and use [commitizen](https://commitizen-tools.github.io/commitizen/) to release new version.
