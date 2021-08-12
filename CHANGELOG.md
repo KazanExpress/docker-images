@@ -1,3 +1,13 @@
+## v0.5.0 (2021-08-12)
+
+### Feat
+
+- add elasticsearch
+
+### Refactor
+
+- add .gitignore and little corrections
+
 ## v0.4.1 (2021-08-12)
 
 ### Fix
