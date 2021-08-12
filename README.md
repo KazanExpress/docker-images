@@ -29,12 +29,12 @@ images
       └── README.md
 ```
 
-After pushing new tag to github CI/CD process will build and push these docker images:
+After pushing a new tag, GitHub Actions will build and push these docker images:
 
 ```txt
+ghcr.io/kazanexpress/commitizen:v2
 ghcr.io/kazanexpress/kafka-connect:v1.6.1
 ghcr.io/kazanexpress/github-cli:v1
-ghcr.io/kazanexpress/github-cli:v2
 ```
 
 ## Conventions
