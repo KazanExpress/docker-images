@@ -1,4 +1,4 @@
-# docker-images
+# KazanExpress Docker Images
 
 This repository contains dockerfiles and builds public docker images from them.
 

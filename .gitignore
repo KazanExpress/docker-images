@@ -1,0 +1,8 @@
+# JetBrains
+.idea/
+
+# vscode
+.vscode/
+
+# OS X
+.DS_Store
