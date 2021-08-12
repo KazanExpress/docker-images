@@ -14,17 +14,19 @@ For example:
 
 ```bash
 images
-    github-cli
-        v1
-            Dockerfile
-            Readme.md
-        v2
-            Dockerfile
-            Readme.md
-    kafka-connect
-        v1.6.1
-            Dockerfile
-            entrypoint.sh
+├── commitizen
+│  └── v2
+│     ├── Dockerfile
+│     └── README.md
+├── github-cli
+│  └── v1
+│     ├── Dockerfile
+│     └── README.md
+└── kafka-connect
+   └── v1.6.1
+      ├── docker-entrypoint.sh
+      ├── Dockerfile
+      └── README.md
 ```
 
 After pushing new tag to github CI/CD process will build and push these docker images:
