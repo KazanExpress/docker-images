@@ -29,3 +29,5 @@ RUN mkdir -p $CERT_DIR && \
     echo Yes | keytool -keystore $TRUSTSTORE_FILE -storepass $KEYTOOL_PASS -alias CARoot -import -file $CERT_FILE_PATH && \
     cp $TRUSTSTORE_FILE /etc/security/ssl
 USER kafka
+
+COPY docker-entrypoint.sh /docker-entrypoint.sh
