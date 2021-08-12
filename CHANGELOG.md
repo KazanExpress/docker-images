@@ -1,3 +1,9 @@
+## v0.4.1 (2021-08-12)
+
+### Fix
+
+- entrypoint for kafka-connect
+
 ## v0.4.0 (2021-08-12)
 
 ### Feat
