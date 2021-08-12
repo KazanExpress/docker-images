@@ -30,16 +30,5 @@ jobs:
       env:
         SOURCE_TAG: ${{ steps.branch_name.outputs.SOURCE_TAG }}
       run: |
-        cd dockerfiles
-        dirs=$(git tag -l | tail -2 | tr '\n' ' ' | xargs -n2 git diff --name-only | grep dockerfiles | awk -F / '{ print $(NF-1) }' | uniq )
-        for dir in $dirs; do
-          cd "$dir"
-
-          app=$(basename "$dir")
-          docker build . --tag ghcr.io/kazanexpress/$app:latest --tag ghcr.io/kazanexpress/$app:$SOURCE_TAG
-          docker push ghcr.io/kazanexpress/$app:latest 
-          docker push ghcr.io/kazanexpress/$app:$SOURCE_TAG
-
-          cd ..
-        done
+        .ci/scripts/run.sh
        
