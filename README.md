@@ -27,7 +27,7 @@ images
             entrypoint.sh
 ```
 
-After running CI/CD we will have these docker images:
+After pushing new tag to github CI/CD process will build and push these docker images:
 
 ```txt
 ghcr.io/kazanexpress/kafka-connect:v1.6.1
