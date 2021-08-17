@@ -1,3 +1,9 @@
+## v0.6.0 (2021-08-17)
+
+### Feat
+
+- add terragrunt with yc
+
 ## v0.5.0 (2021-08-12)
 
 ### Feat
