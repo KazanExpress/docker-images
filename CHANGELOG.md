@@ -1,3 +1,10 @@
+## v0.8.0 (2021-09-09)
+
+### Feat
+
+- add s3fs dockerfile
+- add rover
+
 ## v0.7.0 (2021-08-28)
 
 ### Feat
