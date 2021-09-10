@@ -1,3 +1,9 @@
+## v0.10.2 (2021-09-10)
+
+### Fix
+
+- change gid and uid for processes in s3fs
+
 ## v0.10.1 (2021-09-10)
 
 ### Fix
