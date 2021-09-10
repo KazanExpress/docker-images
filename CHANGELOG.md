@@ -1,3 +1,10 @@
+## v0.10.1 (2021-09-10)
+
+### Fix
+
+- change umask in s3fs mount
+- pushed changelog
+
 ## v0.10.0 (2021-09-10)
 
 ### Feat
