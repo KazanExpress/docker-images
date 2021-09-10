@@ -84,3 +84,4 @@ if [ -n "${mounted}" ]; then
 else
   echo "Mount failure"
 fi
+
