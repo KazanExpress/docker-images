@@ -37,13 +37,13 @@ if [ $GID -gt 0 ]; then
 fi
 
 # Add a user
-#if [ $UID -gt 0 ]; then
-#  adduser -u $UID -D -G $GID $UID
-#  RUN_AS=$UID
-#  chown $UID $AWS_S3_MOUNT
-#  chown $UID ${AWS_S3_AUTHFILE}
-#  chown $UID /opt/s3fs
-#fi
+if [ $UID -gt 0 ]; then
+ adduser -u $UID -D -G $GID $UID
+ RUN_AS=$UID
+ chown $UID $AWS_S3_MOUNT
+ chown $UID ${AWS_S3_AUTHFILE}
+ chown $UID /opt/s3fs
+fi
 
 # Debug options
 DEBUG_OPTS=
@@ -56,7 +56,10 @@ fi
 # detect that mounting was a success. Execute the command on success.
 
 su - $RUN_AS -c "s3fs $DEBUG_OPTS ${S3FS_ARGS} \
-    -o umask=777 \
+    -o umask=227 \
+    -o allow_other \
+    -o uid=1000 \
+    -o gid=1000 \
     -o nonempty \
     -o passwd_file=${AWS_S3_AUTHFILE} \
     -o url=${AWS_S3_URL} \

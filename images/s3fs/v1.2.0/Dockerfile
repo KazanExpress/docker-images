@@ -36,8 +36,8 @@ ENV AWS_S3_URL='http://storage.yandexcloud.net'
 ENV AWS_S3_BUCKET='default'
 
 # User and group ID of share owner
-ENV UID=50000
-ENV GID=50000
+ENV UID=1000
+ENV GID=1000
 
 # Location of directory where to mount the drive into the container.
 ENV AWS_S3_MOUNT=/opt/s3fs/$AWS_S3_BUCKET
