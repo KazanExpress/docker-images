@@ -75,4 +75,3 @@ VOLUME [ "/opt/s3fs/$AWS_S3_BUCKET" ]
 
 ENTRYPOINT [ "tini", "-g", "--", "docker-entrypoint.sh" ]
 CMD [ "empty.sh" ]
-
