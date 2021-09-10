@@ -56,6 +56,7 @@ fi
 # detect that mounting was a success. Execute the command on success.
 
 su - $RUN_AS -c "s3fs $DEBUG_OPTS ${S3FS_ARGS} \
+    -o umask=0007 \
     -o nonempty \
     -o passwd_file=${AWS_S3_AUTHFILE} \
     -o url=${AWS_S3_URL} \
