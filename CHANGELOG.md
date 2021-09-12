@@ -1,3 +1,9 @@
+## v0.11.0 (2021-09-12)
+
+### Feat
+
+- **terragrunt**: add v 1.0.6 with ansible
+
 ## v0.10.2 (2021-09-10)
 
 ### Fix
