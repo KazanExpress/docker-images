@@ -5,4 +5,4 @@ RUN /bin/bash /install.sh
 
 FROM alpine/terragrunt:1.0.6
 COPY --from=builder /root/yandex-cloud/bin/yc /bin/yc
-RUN apk add --no-cache ansible
+RUN apk add --no-cache ansible curl
