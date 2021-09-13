@@ -1,3 +1,9 @@
+## v0.12.0 (2021-09-13)
+
+### Feat
+
+- **terragrunt**: add curl binary
+
 ## v0.11.0 (2021-09-12)
 
 ### Feat
