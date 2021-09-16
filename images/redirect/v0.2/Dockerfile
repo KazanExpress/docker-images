@@ -1,0 +1,1 @@
+FROM alikhil/http-redirect:0.2
