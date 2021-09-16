@@ -1,3 +1,9 @@
+## v0.14.0 (2021-09-16)
+
+### Feat
+
+- **redirector**: add old version
+
 ## v0.13.0 (2021-09-15)
 
 ### Feat
