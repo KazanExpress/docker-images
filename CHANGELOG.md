@@ -1,3 +1,9 @@
+## v0.15.0 (2021-09-24)
+
+### Feat
+
+- **kafka-connect**: add v1.6.2 version of debezium
+
 ## v0.14.0 (2021-09-16)
 
 ### Feat
