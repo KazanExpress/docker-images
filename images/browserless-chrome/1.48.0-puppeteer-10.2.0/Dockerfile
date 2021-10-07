@@ -1,0 +1,1 @@
+FROM browserless/chrome:1.48.0-puppeteer-10.2.0
