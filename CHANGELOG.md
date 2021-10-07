@@ -1,3 +1,9 @@
+## v0.18.0 (2021-10-07)
+
+### Feat
+
+- **browserless**: add other version
+
 ## v0.17.0 (2021-10-07)
 
 ### Feat
