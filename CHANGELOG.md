@@ -1,3 +1,10 @@
+## v0.19.0 (2021-10-13)
+
+### Feat
+
+- **elasticsearch**: add stop words for products and categories (#1)
+- **grafana**: add dockerfile
+
 ## v0.18.0 (2021-10-07)
 
 ### Feat
