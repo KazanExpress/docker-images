@@ -1,3 +1,28 @@
+## v0.22.0 (2021-10-14)
+
+### Feat
+
+- add grafana v8.2.1
+
+## v0.21.0 (2021-10-14)
+
+### Feat
+
+- add grafana v8.2.0
+
+## v0.20.0 (2021-10-13)
+
+### Feat
+
+- add flutter image (#2)
+
+## v0.19.0 (2021-10-13)
+
+### Feat
+
+- **elasticsearch**: add stop words for products and categories (#1)
+- **grafana**: add dockerfile
+
 ## v0.18.0 (2021-10-07)
 
 ### Feat
