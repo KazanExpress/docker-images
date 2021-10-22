@@ -1,3 +1,13 @@
+## v0.23.0 (2021-10-22)
+
+### Feat
+
+- add elasticsearch-dump v6.74.0 (#4)
+
+### Fix
+
+- **elasticsearch**: update stopwords
+
 ## v0.22.0 (2021-10-14)
 
 ### Feat
