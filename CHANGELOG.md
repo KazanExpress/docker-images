@@ -1,3 +1,9 @@
+## v0.24.0 (2021-11-10)
+
+### Feat
+
+- **elasticsearch**: add synonyms
+
 ## v0.23.0 (2021-10-22)
 
 ### Feat
