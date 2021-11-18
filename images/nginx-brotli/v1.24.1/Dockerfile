@@ -154,12 +154,6 @@ RUN \
 	&& ln -sf /dev/stdout /var/log/nginx/access.log \
 	&& ln -sf /dev/stderr /var/log/nginx/error.log
 
-WORKDIR /root/
-COPY ./dist /app
-COPY ./prerender /prerender
-COPY ./.ci/default.conf /etc/nginx/conf.d/default.conf
-COPY ./.ci/nginx.conf /etc/nginx/nginx.conf
-
 EXPOSE 80 443
 
 STOPSIGNAL SIGTERM
