@@ -1,3 +1,9 @@
+## v0.26.1 (2021-11-30)
+
+### Fix
+
+- **elasticsearch**: install jmorphy2 for v7.13.4
+
 ## v0.26.0 (2021-11-30)
 
 ### Feat
