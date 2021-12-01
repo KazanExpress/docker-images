@@ -1,3 +1,9 @@
+## v0.27.0 (2021-12-01)
+
+### Feat
+
+- **elasticsearch**: update synonyms
+
 ## v0.26.1 (2021-11-30)
 
 ### Fix
