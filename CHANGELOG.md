@@ -1,3 +1,10 @@
+## v0.29.0 (2021-12-21)
+
+### Feat
+
+- **grafana**: add version 8.3.3 (#9)
+- **elasticsearch**: add synonyms
+
 ## v0.28.0 (2021-12-04)
 
 ### Feat
