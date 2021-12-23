@@ -1,3 +1,10 @@
+## v0.30.0 (2021-12-23)
+
+### Feat
+
+- **chproxy**: add docker image
+- **chproxy**: add docker image
+
 ## v0.29.0 (2021-12-21)
 
 ### Feat
