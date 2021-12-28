@@ -1,3 +1,9 @@
+## v0.33.0 (2021-12-28)
+
+### Feat
+
+- **kafka-connect**: add image with s3
+
 ## v0.32.0 (2021-12-24)
 
 ### Feat
