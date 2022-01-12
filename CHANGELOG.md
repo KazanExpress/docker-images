@@ -1,3 +1,10 @@
+## v0.34.0 (2022-01-12)
+
+### Feat
+
+- **elasticsearch**: add phrase synonyms
+- **elasticsearch**: add brand synonyms
+
 ## v0.33.0 (2021-12-28)
 
 ### Feat
