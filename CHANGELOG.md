@@ -1,3 +1,13 @@
+## v0.36.0 (2022-01-26)
+
+### Feat
+
+- **browserless-chrome**: add new image tag (#17)
+
+### Fix
+
+- **elasticsearch**: delete invalid transliterations (#13)
+
 ## v0.35.0 (2022-01-12)
 
 ### Feat
