@@ -1,3 +1,13 @@
+## v0.37.0 (2022-01-27)
+
+### Fix
+
+- merge pipeline
+
+### Feat
+
+- add new terragrunt image (#18)
+
 ## v0.36.0 (2022-01-26)
 
 ### Feat
