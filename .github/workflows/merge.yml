@@ -1,0 +1,17 @@
+name: bump-version
+
+on:
+  push:
+    branches:
+      - test
+
+jobs:
+  bump-and-push-tag:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, 'bump:')"
+
+    steps:
+    - name: lint commit message
+      uses: ghcr.io/kazanexpress/commitizen:v2
+      run: |
+        cz check -m "$(git log -1 --pretty=%B)"
