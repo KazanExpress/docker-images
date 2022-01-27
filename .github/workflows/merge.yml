@@ -3,7 +3,7 @@ name: bump-version
 on:
   push:
     branches:
-      - test
+      - master
 
 jobs:
   bump-and-push-tag:
