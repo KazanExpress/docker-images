@@ -26,4 +26,4 @@ jobs:
         git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
 
         cz bump --changelog
-        git push && git push --tags
+        git push origin HEAD:master && git push --tags
