@@ -1,3 +1,9 @@
+## v0.39.0 (2022-02-04)
+
+### Feat
+
+- **elasticsearch**: stopwords for queries (#14)
+
 ## v0.38.0 (2022-02-02)
 
 ### Feat
