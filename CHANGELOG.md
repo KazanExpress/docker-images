@@ -1,3 +1,38 @@
+## v0.42.0 (2022-02-07)
+
+### Refactor
+
+- remove elasticsearch synonyms and stopwords
+
+### Feat
+
+- add es v6.8.4 (#21)
+- **flutter**: upgr version to 2.10.0 (#20)
+- **elasticsearch**: stopwords for queries (#14)
+- **logs**: add aws to image (#19)
+- add new terragrunt image (#18)
+- **browserless-chrome**: add new image tag (#17)
+- **strimzi**: image
+- **elasticsearch**: add phrase synonyms
+- **elasticsearch**: add brand synonyms
+- **kafka-connect**: add image with s3
+- **chproxy**: trigger ci
+- **chproxy**: changes
+- **chproxy**: add docker image
+- **chproxy**: add docker image
+- **grafana**: add version 8.3.3 (#9)
+- **elasticsearch**: add synonyms
+- **elasticsearch**: update synonyms
+- **elasticsearch**: update synonyms
+- **elasticsearch**: install jmorphy2 for v7.13.4
+- **elasticsearch**: add synonyms
+
+### Fix
+
+- merge pipeline
+- **elasticsearch**: delete invalid transliterations (#13)
+- **elasticsearch**: install jmorphy2 for v7.13.4
+
 ## v0.41.0 (2022-02-07)
 
 ### Feat
