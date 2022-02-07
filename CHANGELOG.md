@@ -1,3 +1,9 @@
+## v0.41.1 (2022-02-07)
+
+### Refactor
+
+- remove elasticsearch synonyms and stopwords
+
 ## v0.41.0 (2022-02-07)
 
 ### Feat
