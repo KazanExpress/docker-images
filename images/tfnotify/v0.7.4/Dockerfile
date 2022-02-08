@@ -5,7 +5,7 @@ RUN mkdir /app
 
 WORKDIR /app
 
-RUN go install github.com/mercari/tfnotify@v0.7.4
+RUN CGO_ENABLED=0 GOOS=`go env GOHOSTOS` GOARCH=`go env GOHOSTARCH` go install github.com/mercari/tfnotify@v0.7.4
 
 RUN cp $GOPATH/bin/tfnotify /tfnotify
 
