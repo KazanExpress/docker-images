@@ -1,3 +1,9 @@
+## v0.43.1 (2022-02-08)
+
+### Fix
+
+- **tfnotify**: fix build command
+
 ## v0.43.0 (2022-02-08)
 
 ### Feat
