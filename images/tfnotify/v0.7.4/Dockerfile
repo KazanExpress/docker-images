@@ -1,0 +1,16 @@
+ARG GOLANG_IMAGE="golang:1.17"
+
+FROM ${GOLANG_IMAGE} AS build
+RUN mkdir /app
+
+WORKDIR /app
+
+RUN go install github.com/mercari/tfnotify@v0.7.4
+
+RUN cp $GOPATH/bin/tfnotify /tfnotify
+
+FROM alpine:3.15.0
+
+COPY --from=build /tfnotify /usr/bin/tfnotify
+
+ENTRYPOINT [ "tfnotify" ]
