@@ -1,8 +1,10 @@
-FROM alpine
+FROM alpine:3.15
 
-RUN apk --no-cache add postgresql-client py-pip ca-certificates && pip install s3cmd
-ADD ./template.s3cfg /root/.s3cfg
+RUN addgroup -S backup && adduser -S backup -G backup && \
+    apk --no-cache add postgresql-client py-pip ca-certificates && pip install s3cmd
 
-WORKDIR /srv
+USER backup
+WORKDIR /home/backup
+ADD ./template.s3cfg /home/backup/.s3cfg
 
 CMD ["/bin/sh"]
