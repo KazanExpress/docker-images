@@ -4,7 +4,7 @@ RUN addgroup -S backup && adduser -S backup -G backup && \
     apk --no-cache add postgresql-client py-pip ca-certificates && pip install s3cmd
 
 USER backup
-WORKDIR /home/backup
-ADD ./template.s3cfg /home/backup/.s3cfg
+WORKDIR /workspace
+ADD template.s3cfg /home/backup/.s3cfg
 
 CMD ["/bin/sh"]
