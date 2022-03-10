@@ -1,3 +1,11 @@
+## v0.46.0 (2022-03-10)
+
+### Feat
+
+- **pg-s3**: module added (#23)
+- **terragrunt**: update to tf v1.1.7
+- postgres-s3 docker image (#22)
+
 ## v0.45.0 (2022-02-17)
 
 ### Feat
