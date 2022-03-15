@@ -1,3 +1,9 @@
+## v0.49.0 (2022-03-15)
+
+### Feat
+
+- **logs**: Image of worker for import security events (#25)
+
 ## v0.48.0 (2022-03-14)
 
 ### Feat
