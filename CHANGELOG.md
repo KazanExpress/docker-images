@@ -1,3 +1,9 @@
+## v0.49.1 (2022-03-16)
+
+### Fix
+
+- **security-logs**: change order in Dockerfile (#26)
+
 ## v0.49.0 (2022-03-15)
 
 ### Feat
