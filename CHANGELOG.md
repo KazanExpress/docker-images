@@ -1,3 +1,9 @@
+## v0.50.0 (2022-03-29)
+
+### Feat
+
+- **golang-w-git**: add golang with git
+
 ## v0.49.1 (2022-03-16)
 
 ### Fix
