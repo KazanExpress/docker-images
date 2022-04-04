@@ -1,3 +1,9 @@
+## v0.53.0 (2022-04-04)
+
+### Feat
+
+- **sonarqube**: add  v9.3.0-1 with PR plugin
+
 ## v0.52.0 (2022-04-04)
 
 ### Feat
