@@ -1,3 +1,9 @@
+## v0.55.0 (2022-04-06)
+
+### Feat
+
+- **openapi-generator-cli**: Add openapi-generator-cli image (#30)
+
 ## v0.54.0 (2022-04-06)
 
 ### Feat
