@@ -1,3 +1,9 @@
+## v0.61.0 (2022-04-27)
+
+### Feat
+
+- **terragrunt**: add v1.1.9 tf version
+
 ## v0.60.0 (2022-04-21)
 
 ### Feat
