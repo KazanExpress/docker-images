@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-#BASE_DIR=config/hunspell
-BASE_DIR=/home/igor/temp/hunspell
+BASE_DIR=config/hunspell
 BASE_URL="https://raw.githubusercontent.com/LibreOffice/dictionaries/master"
 
 # english
