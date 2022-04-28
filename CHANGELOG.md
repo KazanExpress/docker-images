@@ -1,3 +1,9 @@
+## v0.63.0 (2022-04-28)
+
+### Feat
+
+- **elasticsearch**: uzbek hunspell dictionaries (#35)
+
 ## v0.62.0 (2022-04-28)
 
 ### Feat
