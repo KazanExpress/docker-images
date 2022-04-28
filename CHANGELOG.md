@@ -1,3 +1,9 @@
+## v0.63.1 (2022-04-28)
+
+### Fix
+
+- **elasticsearch**: don't copy data folder
+
 ## v0.63.0 (2022-04-28)
 
 ### Feat
