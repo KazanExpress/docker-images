@@ -4,7 +4,7 @@ RUN curl https://storage.yandexcloud.net/yandexcloud-yc/install.sh > /install.sh
 RUN /bin/bash /install.sh
 
 
-FROM ghcr.io/kazanexpress/tf-toolbox:v0.1.1 as toolbox
+FROM ghcr.io/kazanexpress/tf-toolbox:0.1.1 as toolbox
 
 
 FROM alpine/terragrunt:1.1.9
