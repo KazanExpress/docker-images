@@ -1,3 +1,9 @@
+## v0.65.1 (2022-05-18)
+
+### Fix
+
+- **elasticsearch**: uzbek hunspell (#38)
+
 ## v0.65.0 (2022-05-05)
 
 ### Feat
