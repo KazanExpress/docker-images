@@ -1,3 +1,9 @@
+## v0.66.0 (2022-05-19)
+
+### Feat
+
+- **drone-downstream**: add image
+
 ## v0.65.1 (2022-05-18)
 
 ### Fix
