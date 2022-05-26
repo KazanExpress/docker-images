@@ -1,3 +1,9 @@
+## v0.67.0 (2022-05-26)
+
+### Feat
+
+- **elasticsearch**: add image with Learning to Rank plugin (#39)
+
 ## v0.66.0 (2022-05-19)
 
 ### Feat
