@@ -1,3 +1,9 @@
+## v0.67.1 (2022-05-26)
+
+### Fix
+
+- **elasticsearch**: install Learning to Rank plugin with batch param
+
 ## v0.67.0 (2022-05-26)
 
 ### Feat
