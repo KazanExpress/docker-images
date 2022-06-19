@@ -9,11 +9,12 @@ RUN set -ex; \
       curl \
       python3 \
       python3-pip \
+      python3-termcolor \
+      python3-setuptools \
       git; \
     rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install --no-cache-dir -U pip setuptools; \
-    pip3 install --no-cache-dir "commitizen==2.17.13"
+RUN pip3 install --no-cache-dir "commitizen==2.17.13"
 
 RUN set -ex; \
     curl -L "https://github.com/cli/cli/releases/download/v${GITHUB_CLI_VERSION}/gh_${GITHUB_CLI_VERSION}_checksums.txt" -o checksums.txt; \
