@@ -11,9 +11,11 @@ ENV GF_PATHS_PLUGINS="/var/lib/grafana-plugins"
 # https://github.com/hadolint/hadolint/wiki/DL4006
 SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 
-RUN export GF_GID_NAME=$(getent group $GF_GID | cut -d':' -f1) && \
-    mkdir -p "$GF_PATHS_PLUGINS" && \
-    chown -R grafana:$GF_GID_NAM "$GF_PATHS_PLUGINS"
+# hadolint ignore=SC2155
+RUN export GF_GID_NAME=$(getent group "$GF_GID" | cut -d':' -f1) && \
+    mkdir -p "$GF_PATHS_PLUGINS"
+
+RUN chown -R "grafana:$GF_GID_NAME" "$GF_PATHS_PLUGINS"
 
 RUN if [ $GF_INSTALL_IMAGE_RENDERER_PLUGIN = "true" ]; then \
     echo "http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \
