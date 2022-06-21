@@ -8,6 +8,9 @@ ARG GF_INSTALL_IMAGE_RENDERER_PLUGIN="false"
 
 ENV GF_PATHS_PLUGINS="/var/lib/grafana-plugins"
 
+# https://github.com/hadolint/hadolint/wiki/DL4006
+SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
+
 RUN export GF_GID_NAME=$(getent group $GF_GID | cut -d':' -f1) && \
     mkdir -p "$GF_PATHS_PLUGINS" && \
     chown -R grafana:$GF_GID_NAM "$GF_PATHS_PLUGINS"
@@ -16,11 +19,14 @@ RUN if [ $GF_INSTALL_IMAGE_RENDERER_PLUGIN = "true" ]; then \
     echo "http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \
     echo "http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories && \
     echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
-    apk --no-cache  upgrade && \
-    apk add --no-cache udev ttf-opensans chromium && \
+    apk --no-cache upgrade && \
+    apk add --no-cache \
+    chromium=102.0.5005.115-r0 \
+    ttf-opensans=0_git20210927-r0 \
+    udev=176 && \
     rm -rf /tmp/* && \
     rm -rf /usr/share/grafana/tools/phantomjs; \
-fi
+    fi
 
 # USER grafana
 USER "$GF_UID"
@@ -29,18 +35,18 @@ ENV GF_RENDERER_PLUGIN_CHROME_BIN="/usr/bin/chromium-browser"
 
 RUN if [ $GF_INSTALL_IMAGE_RENDERER_PLUGIN = "true" ]; then \
     grafana-cli \
-        --pluginsDir "$GF_PATHS_PLUGINS" \
-        --pluginUrl https://github.com/grafana/grafana-image-renderer/releases/latest/download/plugin-linux-x64-glibc-no-chromium.zip \
-        plugins install grafana-image-renderer; \
-fi
+    --pluginsDir "$GF_PATHS_PLUGINS" \
+    --pluginUrl https://github.com/grafana/grafana-image-renderer/releases/latest/download/plugin-linux-x64-glibc-no-chromium.zip \
+    plugins install grafana-image-renderer; \
+    fi
 
 ARG GF_INSTALL_PLUGINS="vertamedia-clickhouse-datasource,doitintl-bigquery-datasource"
 
-RUN if [ ! -z "${GF_INSTALL_PLUGINS}" ]; then \
+RUN if [ -n "${GF_INSTALL_PLUGINS}" ]; then \
     OLDIFS=$IFS; \
-        IFS=','; \
+    IFS=','; \
     for plugin in ${GF_INSTALL_PLUGINS}; do \
         IFS=$OLDIFS; \
         grafana-cli --pluginsDir "$GF_PATHS_PLUGINS" plugins install ${plugin}; \
     done; \
-fi
+    fi
