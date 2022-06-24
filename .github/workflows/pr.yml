@@ -1,0 +1,68 @@
+name: Check dockerfile
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  find-changed-files:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Get specific changed files
+        id: changed-files-docker
+        uses: tj-actions/changed-files@v23
+        with:
+          files: |
+            images/**/Dockerfile
+          files_ignore: |
+            *.md
+
+      - name: Set matrix for lint
+        id: set-matrix
+        run: |
+          # See https://stackoverflow.com/a/62953566/11948346
+          JSON="{\"include\":["
+
+          # Loop by lines
+          for path in ${{ steps.changed-files-docker.outputs.all_changed_files }}; do
+            # Add build to the matrix only if it is not already included
+            JSONline="{\"dockerfile\": \"$path\"},"
+            if [[ "$JSON" != *"$JSONline"* ]]; then
+              JSON="$JSON$JSONline"
+            fi
+          done
+
+          # Remove last "," and add closing brackets
+          if [[ $JSON == *, ]]; then
+            JSON="${JSON%?}"
+          fi
+          JSON="$JSON]}"
+          echo $JSON
+
+          # Set output
+          echo "::set-output name=matrix::$( echo "$JSON" )"
+
+  hadolint:
+    needs: find-changed-files
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: ${{fromJson(needs.find-changed-files.outputs.matrix)}}
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+
+      - uses: hadolint/hadolint-action@v2.0.0
+        id: hadolint
+        with:
+          no-color: false
+          dockerfile: ${{ matrix.dockerfile }}
