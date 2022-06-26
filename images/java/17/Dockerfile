@@ -1,2 +1,2 @@
 FROM openjdk:17
-ADD .settings.xml /usr/share/maven/conf/
+COPY settings.xml /usr/share/maven/conf/
