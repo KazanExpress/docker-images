@@ -1,5 +1,5 @@
 # Multi-stage build
-FROM alpine AS build
+FROM alpine:3.16.0 AS build
 
 LABEL maintainer="Yuriy Gavrilin <yuriy@kazanexpress.ru>"
 
@@ -7,30 +7,29 @@ ARG S3FS_VERSION=v1.86
 
 # Install s3fs-s3fs
 RUN apk --no-cache add \
-    ca-certificates \
-    build-base \
-    git \
-    alpine-sdk \
-    libcurl \
-    automake \
-    autoconf \
-    libxml2-dev \
-    libressl-dev \
-    fuse-dev \
-    curl-dev && \
-  git clone https://github.com/s3fs-fuse/s3fs-fuse.git && \
-  cd s3fs-fuse && \
-  git checkout tags/${S3FS_VERSION} && \
+    alpine-sdk=1.0-r1 \
+    autoconf=2.71-r0 \ 
+    automake=1.16.5-r0 \
+    build-base=0.5-r3 \
+    ca-certificates=20211220-r0 \
+    curl-dev=7.83.1-r1 \
+    fuse-dev=2.9.9-r1 \
+    git=2.36.1-r0 \
+    libcurl=7.83.1-r1 \
+    libressl-dev=3.5.3-r0 \
+    libxml2-dev=2.9.14-r0 && \
+    git clone https://github.com/s3fs-fuse/s3fs-fuse.git
+
+WORKDIR /s3fs-fuse
+
+RUN git checkout tags/${S3FS_VERSION} && \
   ./autogen.sh && \
   ./configure --prefix=/usr && \
   make -j && \
   make install
 
 
-FROM alpine
-
-COPY --from=build /usr/bin/s3fs /usr/bin/s3fs
-
+FROM alpine:3.16.0
 
 ENV AWS_S3_URL='http://storage.yandexcloud.net'
 ENV AWS_S3_BUCKET='default'
@@ -46,15 +45,17 @@ ENV AWS_S3_MOUNT=/opt/s3fs/$AWS_S3_BUCKET
 ENV S3FS_DEBUG=0
 #ENV S3FS_ARGS='use_cache=/tmp,max_stat_cache_size=1000,stat_cache_expire=900,retries=5,connect_timeout=10'
 
+COPY --from=build /usr/bin/s3fs /usr/bin/s3fs
+
 RUN mkdir /opt/s3fs && \
     apk --no-cache add \
-      ca-certificates \
-      fuse \
-      libxml2 \
-      libcurl \
-      libgcc \
-      libstdc++ \
-      tini && \
+      ca-certificates=20211220-r0 \
+      fuse=2.9.9-r1 \
+      libcurl=7.83.1-r1 \
+      libgcc=11.2.1_git20220219-r2 \
+      libstdc++=11.2.1_git20220219-r2 \
+      libxml2=2.9.14-r0 \
+      tini=0.19.0-r0 && \
     s3fs --version
 
 # allow access to volume by different user to enable UIDs other than root when using volumes

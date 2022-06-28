@@ -1,5 +1,5 @@
 FROM quay.io/strimzi/kafka:0.27.0-kafka-3.0.0
-LABEL maintener="KazanExpress analytics"
+LABEL maintainer="KazanExpress analytics"
 ARG CERT_DIR="/usr/local/share/ca-certificates/Yandex"
 ARG CERT_URL="https://storage.yandexcloud.net/cloud-certs/CA.pem"
 ARG CERT_FILE_PATH=$CERT_DIR"/YandexCA.crt"
@@ -13,9 +13,11 @@ ENV DEBEZIUM_VERSION="1.8.0.Final" \
     MAVEN_DEP_DESTINATION=$KAFKA_CONNECT_PLUGINS_DIR \
     POSTGRES_MD5=02a489aa11424cd8233bac98f0da702e
 USER root
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN mkdir -p $CERT_DIR && \
-    curl $CERT_URL --output $CERT_FILE_PATH
-RUN echo Yes | keytool -keystore $TRUSTSTORE_FILE -storepass $KEYTOOL_PASS -alias CARoot -import -file $CERT_FILE_PATH
-RUN cp $TRUSTSTORE_FILE /etc/security/ssl
-RUN mkdir -p $KAFKA_CONNECT_PLUGINS_DIR
+    curl $CERT_URL --output $CERT_FILE_PATH && \
+    echo Yes | keytool -keystore $TRUSTSTORE_FILE -storepass $KEYTOOL_PASS -alias CARoot -import -file $CERT_FILE_PATH && \
+    cp $TRUSTSTORE_FILE /etc/security/ssl && \
+    mkdir -p $KAFKA_CONNECT_PLUGINS_DIR
 EXPOSE 8083
+USER 1001

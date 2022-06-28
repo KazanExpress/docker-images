@@ -1,10 +1,12 @@
-FROM python:3-alpine
+FROM python:3.10.5-alpine3.16
 
 WORKDIR /app
 
 # add dependincies
-RUN apk add --update -t --no-cache git curl alpine-sdk
-
-RUN pip install --no-cache-dir "commitizen==2.17.13"
+RUN apk add -t --no-cache \
+    alpine-sdk=1.0-r1 \
+    curl=7.83.1-r1 \
+    git=2.36.1-r0 \
+    && pip install --no-cache-dir "commitizen==2.17.13"
 
 CMD ["cz", "version"]

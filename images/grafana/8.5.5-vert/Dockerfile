@@ -16,8 +16,11 @@ RUN if [ $GF_INSTALL_IMAGE_RENDERER_PLUGIN = "true" ]; then \
     echo "http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \
     echo "http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories && \
     echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
-    apk --no-cache  upgrade && \
-    apk add --no-cache udev ttf-opensans chromium && \
+    apk --no-cache upgrade && \
+    apk add --no-cache \
+    chromium=102.0.5005.115-r0 \
+    ttf-opensans=0_git20210927-r0 \
+    udev=176 && \
     rm -rf /tmp/* && \
     rm -rf /usr/share/grafana/tools/phantomjs; \
     fi
@@ -33,19 +36,22 @@ RUN if [ $GF_INSTALL_IMAGE_RENDERER_PLUGIN = "true" ]; then \
     plugins install grafana-image-renderer; \
     fi
 
+# https://github.com/hadolint/hadolint/wiki/DL4006
+SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
+
 ARG GF_INSTALL_PLUGINS="grafana-clickhouse-datasource,vertamedia-clickhouse-datasource,doitintl-bigquery-datasource"
 
-RUN if [ ! -z "${GF_INSTALL_PLUGINS}" ]; then \
+RUN if [ -n "${GF_INSTALL_PLUGINS}" ]; then \
     OLDIFS=$IFS; \
     IFS=','; \
     for plugin in ${GF_INSTALL_PLUGINS}; do \
-    IFS=$OLDIFS; \
-    if expr match "$plugin" '.*\;.*'; then \
-    pluginUrl=$(echo "$plugin" | cut -d';' -f 1); \
-    pluginInstallFolder=$(echo "$plugin" | cut -d';' -f 2); \
-    grafana-cli --pluginUrl ${pluginUrl} --pluginsDir "${GF_PATHS_PLUGINS}" plugins install "${pluginInstallFolder}"; \
-    else \
-    grafana-cli --pluginsDir "${GF_PATHS_PLUGINS}" plugins install ${plugin}; \
-    fi \
+        IFS=$OLDIFS; \
+        if expr "$plugin" : '.*\;.*'; then \
+            pluginUrl=$(echo "$plugin" | cut -d';' -f 1); \
+            pluginInstallFolder=$(echo "$plugin" | cut -d';' -f 2); \
+            grafana-cli --pluginUrl "${pluginUrl}" --pluginsDir "${GF_PATHS_PLUGINS}" plugins install "${pluginInstallFolder}"; \
+        else \
+            grafana-cli --pluginsDir "${GF_PATHS_PLUGINS}" plugins install "${plugin}"; \
+        fi \
     done \
     fi
