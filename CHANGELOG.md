@@ -1,3 +1,9 @@
+## v0.75.0 (2022-07-06)
+
+### Feat
+
+- **cz**: add terraform-docs binary (#48)
+
 ## v0.74.0 (2022-07-06)
 
 ### Feat
