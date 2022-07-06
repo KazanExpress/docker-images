@@ -1,3 +1,15 @@
+## v0.76.0 (2022-07-06)
+
+### Fix
+
+- merge workflow
+- **cz**: trigger ci
+- **cz-with-tf**: change dir
+
+### Feat
+
+- **cz**: trigger ci (#49)
+
 ## v0.75.0 (2022-07-06)
 
 ### Feat
