@@ -2,7 +2,6 @@ FROM python:3.10.5-alpine3.16
 
 WORKDIR /app
 
-# add dependincies
 RUN apk add -t --no-cache \
     "alpine-sdk>=1.0-r1" \
     "curl>=7.83.1-r1" \
