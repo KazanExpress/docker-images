@@ -1,3 +1,9 @@
+## v0.76.2 (2022-07-07)
+
+### Fix
+
+- **postgres-s3**: security upgrade alpine from 3.15 to 3.16 [snyk] (#51)
+
 ## v0.76.1 (2022-07-07)
 
 ### Fix
