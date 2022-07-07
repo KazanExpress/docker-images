@@ -11,13 +11,8 @@ ARG TERRAGRUNT=v0.36.12
 ADD https://github.com/gruntwork-io/terragrunt/releases/download/${TERRAGRUNT}/terragrunt_linux_amd64 /usr/local/bin/terragrunt
 
 RUN apk add --update --no-cache "bash>=5.1.15" "git>=2.34.2" "openssh>=8.8" "jq>=1.6-r1" "curl>=7.80.0" "ansible>=4.8.0" \
-    && chmod +x /usr/local/bin/terragrunt \
-    && addgroup -S terragrunt && adduser -S terragrunt -G terragrunt \
-    && mkdir -p /drone/src \
-    && chown -R terragrunt:terragrunt /drone/src
+    && chmod +x /usr/local/bin/terragrunt
 
 COPY --from=builder /root/yandex-cloud/bin/yc /bin/yc
 COPY --from=toolbox /app /bin
 WORKDIR /drone/src
-
-USER terragrunt
