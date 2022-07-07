@@ -47,7 +47,7 @@ ARG CONFIG="\
 		--add-module=/usr/src/ngx_brotli \
 	"
 
-FROM alpine:3.14 AS builder
+FROM alpine:3.15 AS builder
 LABEL maintainer="NGINX Docker Maintainers <docker-maint@nginx.com>"
 
 ARG NGINX_VERSION
@@ -135,7 +135,7 @@ RUN \
 			| xargs -r apk info --installed \
 			| sort -u > /tmp/runDeps.txt
 
-FROM alpine:3.14
+FROM alpine:3.15
 ARG NGINX_VERSION
 
 COPY --from=builder /tmp/runDeps.txt /tmp/runDeps.txt
