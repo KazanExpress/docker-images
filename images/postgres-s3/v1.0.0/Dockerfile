@@ -1,4 +1,4 @@
-FROM alpine:3.15
+FROM alpine:3.16
 
 RUN addgroup -S backup && adduser -S backup -G backup && \
     apk --no-cache add \
