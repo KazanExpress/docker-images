@@ -1,3 +1,9 @@
+## v0.78.0 (2022-07-07)
+
+### Feat
+
+- add kubectl with yc Dockerfile (#52)
+
 ## v0.77.0 (2022-07-07)
 
 ### Feat
