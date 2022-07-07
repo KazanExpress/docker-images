@@ -1,3 +1,9 @@
+## v0.76.1 (2022-07-07)
+
+### Fix
+
+- **drone-downstream**: security upgrade alpine from 3.15.4 to 3.16 [Snyk]  (#50)
+
 ## v0.76.0 (2022-07-06)
 
 ### Fix
