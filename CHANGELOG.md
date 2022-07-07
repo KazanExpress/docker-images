@@ -1,3 +1,9 @@
+## v0.79.1 (2022-07-07)
+
+### Fix
+
+- **terragrunt**: revert adding user
+
 ## v0.79.0 (2022-07-07)
 
 ### Feat
