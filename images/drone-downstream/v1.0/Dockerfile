@@ -1,6 +1,6 @@
 FROM plugins/downstream:1.2.0 as base
 
-FROM alpine:3.15.4
+FROM alpine:3.16
 
 RUN apk add --no-cache bash=5.1.16-r0
 
