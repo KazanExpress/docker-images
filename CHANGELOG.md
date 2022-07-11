@@ -1,3 +1,9 @@
+## v0.80.0 (2022-07-11)
+
+### Feat
+
+- **dowstream**: fix base plugin version
+
 ## v0.79.1 (2022-07-07)
 
 ### Fix
