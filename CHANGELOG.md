@@ -1,3 +1,9 @@
+## v0.80.1 (2022-07-11)
+
+### Fix
+
+- **kube-yc**: add workdir for kubeyc user, install jq & bash (#55)
+
 ## v0.80.0 (2022-07-11)
 
 ### Feat
