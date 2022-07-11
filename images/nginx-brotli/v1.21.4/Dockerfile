@@ -56,25 +56,25 @@ ARG CONFIG
 
 RUN \
 	apk add --no-cache --virtual .build-deps \
-		curl=7.79.1-r1 \
-		gcc=10.3.1_git20210424-r2 \
-		gd-dev=2.3.2-r1 \
-		geoip-dev=1.6.12-r2 \
-		gnupg1=1.4.23-r2 \
-		libc-dev=0.7.2-r3 \
-		libxslt-dev=1.1.35-r0 \
-		linux-headers=5.10.41-r0 \
-		make=4.3-r0 \
-		openssl-dev=1.1.1o-r0 \
-		pcre-dev=8.44-r0 \
-		zlib-dev=1.2.12-r1 \
+		"curl>=7.80.0-r2" \
+		"gcc>=10.3.1_git20211027-r0" \
+		"gd-dev>=2.3.2-r1" \
+		"geoip-dev>=1.6.12-r2" \
+		"gnupg1>=1.4.23-r2" \
+		"libc-dev>=0.7.2-r3" \
+		"libxslt-dev>=1.1.35-r0" \
+		"linux-headers>=5.10.41-r0" \
+		"make>=4.3-r0" \
+		"openssl-dev>=1.1.1q-r0" \
+		"pcre-dev>=8.45-r1" \
+		"zlib-dev>=1.2.12-r1" \
 	&& apk add --no-cache --virtual .brotli-build-deps \
-		autoconf=2.71-r0 \
-		libtool=2.4.6-r7 \
-		automake=1.16.3-r0 \
-		git=2.32.2-r0 \
-		g++=10.3.1_git20210424-r2 \
-		cmake=3.20.3-r0
+		"autoconf>=2.71-r0" \
+		"automake>=1.16.4-r1" \
+		"cmake>=3.21.3-r0" \
+		"git>=2.34.2-r0" \
+		"g++>=10.3.1_git20211027-r0" \
+		"libtool>=2.4.6-r7" 
 
 COPY nginx.pub /tmp/nginx.pub
 
