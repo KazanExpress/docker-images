@@ -1,3 +1,9 @@
+## v0.81.1 (2022-07-12)
+
+### Fix
+
+- **allurectl**: add allurectl to path
+
 ## v0.81.0 (2022-07-12)
 
 ### Feat
