@@ -1,8 +1,7 @@
 FROM alpine
 
-ENV SOURCE_URL="https://github.com/allure-framework/allurectl/releases/download/1.22.2/allurectl_linux_amd64"
+ADD https://github.com/allure-framework/allurectl/releases/download/1.22.2/allurectl_linux_amd64 /bin/allurectl
 
-RUN wget ${SOURCE_URL} -O ./allurectl && \
-    chmod +x ./allurectl
+RUN chmod +x /bin/allurectl
 
-CMD ["./allurectl", "--version"]
+CMD ["allurectl", "--version"]
