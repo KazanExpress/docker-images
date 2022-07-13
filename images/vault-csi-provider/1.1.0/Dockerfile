@@ -1,0 +1,1 @@
+FROM hashicorp/vault-csi-provider:1.1.0
