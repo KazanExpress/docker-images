@@ -1,3 +1,9 @@
+## v0.82.0 (2022-07-13)
+
+### Feat
+
+- **vault**: mirror vault docker images (#57)
+
 ## v0.81.1 (2022-07-12)
 
 ### Fix
