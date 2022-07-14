@@ -1,4 +1,4 @@
-FROM python:3.9.10-slim
+FROM python:3.11.0b3-slim
 WORKDIR /app
 COPY /function /app/function
 COPY /include /app/include
