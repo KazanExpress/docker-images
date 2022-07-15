@@ -1,3 +1,9 @@
+## v0.82.1 (2022-07-15)
+
+### Fix
+
+- **nginx-brotli**: security upgrade alpine from 3.14 to 3.15 [by snyk] (#53)
+
 ## v0.82.0 (2022-07-13)
 
 ### Feat
