@@ -15,7 +15,7 @@ COPY ./sources ./
 RUN make release-build
 
 
-FROM alpine:3.16.0
+FROM alpine:3.16
 COPY --from=build /go/src/github.com/Vertamedia/chproxy/chproxy /chproxy
 ENTRYPOINT [ "/chproxy" ]
 CMD [ "--help" ]
