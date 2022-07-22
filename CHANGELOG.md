@@ -1,3 +1,9 @@
+## v0.83.1 (2022-07-22)
+
+### Fix
+
+- **runner-docker-cleanup**: copying multiple files (#63)
+
 ## v0.83.0 (2022-07-22)
 
 ### Feat
