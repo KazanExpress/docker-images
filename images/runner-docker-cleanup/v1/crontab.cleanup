@@ -1,1 +1,1 @@
-* * * * * /usr/scheduler/cleanup.sh
+0 2 * * 0 /usr/scheduler/cleanup.sh
