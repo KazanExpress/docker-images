@@ -10,7 +10,7 @@ WORKDIR /usr/scheduler
 
 COPY crontab.cleanup ./
 
-COPY scripts/*.sh .
+COPY scripts/ ./
 # execute permissions
 RUN chmod u+x start.sh cleanup.sh
 # Start cron
