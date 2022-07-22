@@ -1,3 +1,9 @@
+## v0.83.0 (2022-07-22)
+
+### Feat
+
+- **runner-docker-cleanup**: add image that cleans runner (#62)
+
 ## v0.82.1 (2022-07-15)
 
 ### Fix
