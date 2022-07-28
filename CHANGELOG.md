@@ -1,3 +1,9 @@
+## v0.83.3 (2022-07-28)
+
+### Fix
+
+- **siem-worker**: Security upgrade python to 3.9-slim (#58) [snyk]
+
 ## v0.83.2 (2022-07-28)
 
 ### Fix
