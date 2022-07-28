@@ -1,3 +1,9 @@
+## v0.83.2 (2022-07-28)
+
+### Fix
+
+- **images/chproxy/v1.14.0/Dockerfile**: to reduce vulnerabilities (#61)
+
 ## v0.83.1 (2022-07-22)
 
 ### Fix
