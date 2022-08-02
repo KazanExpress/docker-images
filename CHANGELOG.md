@@ -1,3 +1,9 @@
+## v0.86.0 (2022-08-02)
+
+### Feat
+
+- **kibana**: add v7.17.0 with analyze api ui plugin
+
 ## v0.85.0 (2022-08-01)
 
 ### Feat
