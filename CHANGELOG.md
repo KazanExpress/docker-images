@@ -1,3 +1,9 @@
+## v0.91.0 (2022-08-18)
+
+### Feat
+
+- **cz**: security upgrade python from 3.10.5-alpine3.16 to alpine3.16 by snyk (#70)
+
 ## v0.90.0 (2022-08-15)
 
 ### Feat
