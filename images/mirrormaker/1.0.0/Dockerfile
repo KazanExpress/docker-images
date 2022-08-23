@@ -1,4 +1,4 @@
-FROM prokop7/maven3.6.1-jdk11 AS build
+FROM maven:3.6.3-openjdk-11-slim AS build
 
 WORKDIR /app
 
