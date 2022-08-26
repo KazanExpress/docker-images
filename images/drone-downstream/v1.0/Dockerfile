@@ -1,4 +1,4 @@
-FROM plugins/downstream@sha256:3cb2945655ad5ae1459b29fa530c7791ad865a85908d2a77e34b39f84934303c as base
+FROM plugins/downstream@sha256:43867f4273432cba6b6dec8e508cdf36c518dad17c3412c771e0404ae51db6ec as base
 
 FROM alpine:3.16
 
