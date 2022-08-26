@@ -1,3 +1,9 @@
+## v0.94.0 (2022-08-26)
+
+### Feat
+
+- **downstream**: upgrade to new version (#75)
+
 ## v0.93.0 (2022-08-25)
 
 ### Feat
