@@ -8,4 +8,4 @@ RUN mkdir /config && npm install
 
 VOLUME [ "/config" ]
 
-CMD npm start
+CMD [ "npm", "start" ]
