@@ -1,3 +1,9 @@
+## v0.95.0 (2022-08-29)
+
+### Feat
+
+- exporter for managed clickhouse cluster logs (#76)
+
 ## v0.94.0 (2022-08-26)
 
 ### Feat
