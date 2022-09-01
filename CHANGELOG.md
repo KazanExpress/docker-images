@@ -1,3 +1,9 @@
+## v0.96.2 (2022-09-01)
+
+### Fix
+
+- **clicklogs**: rm password es output fix error message (#81)
+
 ## v0.96.1 (2022-09-01)
 
 ### Fix
