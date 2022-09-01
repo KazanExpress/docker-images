@@ -1,6 +1,6 @@
 {
   "name": "clickhouse-log-exporter",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Exports managed clickhouse logs to elasticsearch index",
   "main": "index.mjs",
   "scripts": {
