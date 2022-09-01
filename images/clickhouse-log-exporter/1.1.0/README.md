@@ -1,17 +1,23 @@
+## Notes:
+
+Due to the nature of the Yandex Cloud Log streaming API, the export progress should start from scratch
+when the `CLICKHOUSE_LOG_FILTER` variable changes. To fix this: delete the `clusterId` document
+from `ELASTIC_PROGRESS_INDEX` and restart the worker.
+
 ## Environment config
 
 ```
-# if empty /config/ca.pem or custom path in image
+# if empty /config/ca.pem or custom path
 ELASTIC_CERT_URL=https://storage.yandexcloud.net/cloud-certs/CA.pem
 
 ELASTIC_URL=https://c-{elasticId}.rw.mdb.yandexcloud.net:9200/
 
 ELASTIC_USERNAME=elastic username
 
-# encoded elastic password
+# encrypted elastic password
 ELASTIC_ENC_PW=
 
-# # or raw password
+# or raw password
 # ELASTIC_PASSWORD=raw password
 
 # target log index
@@ -30,13 +36,13 @@ KMS_KEY_ID=kms-key-id
 CLICKHOUSE_CLUSTER_ID=
 
 # clickhouse log filter see yandex-api clickhouse cluster `streamLogs`
-CLICKHOUST_LOG_FILTER="message.severity='Error'" or other filter
+CLICKHOUSE_LOG_FILTER="message.severity='Error'"
 
 # # json encoded yandex service account
 # YC_SERVICE_ACCOUNT="{}"
 
 # or service account file
-YC_SERVICE_ACCOUNT_PATH=/config/sa.json
+# YC_SERVICE_ACCOUNT_PATH=/config/sa.json
 
 # elastic write batch size
 PROCESSOR_BATCH_SIZE=2000

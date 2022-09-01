@@ -38,7 +38,7 @@ if (encryptedElasticSecret) {
 assert.ok(!!clickhouseClusterId, 'Clickhouse: clusterId is missing');
 assert.ok(
   !!process.env.YC_SERVICE_ACCOUNT_PATH || !!process.env.YC_SERVICE_ACCOUNT,
-  'Clickhouse: clusterId is missing'
+  'YC: service account is missing'
 );
 
 const targetIndex = elasticIndex || `clickhouse_logs-${clickhouseClusterId}`;
@@ -72,8 +72,6 @@ const finalElasticPassword = elasticPassword
   : (await kmsClient.decrypt(encryptedElasticSecret, kmsKeyId)).plaintext
       .toString()
       .trim();
-
-console.debug({ finalElasticPassword });
 
 const elasticClient = new ElasticClient(
   elasticUrl,
