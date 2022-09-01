@@ -1,0 +1,17 @@
+{
+  "name": "clickhouse-log-exporter",
+  "version": "1.1.0",
+  "description": "Exports managed clickhouse logs to elasticsearch index",
+  "main": "index.mjs",
+  "scripts": {
+    "start": "node index.mjs"
+  },
+  "dependencies": {
+    "@elastic/elasticsearch": "^8.2.1",
+    "@yandex-cloud/nodejs-sdk": "^2.1.1",
+    "axios": "^0.27.2",
+    "dotenv": "^16.0.1",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.4"
+  }
+}
