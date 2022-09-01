@@ -1,3 +1,9 @@
+## v0.96.1 (2022-09-01)
+
+### Fix
+
+- **drone-downstrram**: downgrade as new version (#79)
+
 ## v0.96.0 (2022-09-01)
 
 ### Feat
