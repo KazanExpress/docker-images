@@ -1,6 +1,7 @@
 FROM alpine:3.16
 LABEL maintainer="Gaifullin Amir <gajjfullinai@gmail.com>"
 
+#Set environment
 ENV JAVA=
 ENV BUILD_TOOLS "33.0.0"
 ENV TARGET_SDK "33"
@@ -16,8 +17,10 @@ ENV JAVA_HOME="/usr/lib/jvm/default-jvm/"
 # Has to be set explictly to find binaries 
 ENV PATH=$PATH:${JAVA_HOME}/bin
 
+# Set shell
 SHELL ["/bin/ash", "-o", "pipefail", "-c"]
 
+# Install package
 RUN apk upgrade && \
     apk add --no-cache openjdk11=11.0.16.1_p1-r0 bash=5.1.16-r2 curl=7.83.1-r3 git=2.36.2-r0 unzip=6.0-r9 wget=1.21.3-r0 coreutils=9.1-r0 && \
     rm -rf /tmp/* && \
@@ -33,6 +36,7 @@ RUN apk upgrade && \
     sdkmanager --sdk_root="${ANDROID_SDK_ROOT}" --install "build-tools;${BUILD_TOOLS}" "platforms;android-${TARGET_SDK}" && \
     sdkmanager --sdk_root="${ANDROID_SDK_ROOT}" --uninstall emulator
 
+# Set workdir
 WORKDIR /home/android
 
 CMD ["/bin/bash"]
