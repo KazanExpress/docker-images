@@ -23,7 +23,7 @@ SHELL ["/bin/ash", "-o", "pipefail", "-c"]
 
 # Install package
 RUN apk upgrade && \
-    apk add --no-cache openjdk${JAVA}=${JAVA_VERSION} bash=5.1.16-r2 curl=7.83.1-r3 git=2.36.2-r0 unzip=6.0-r9 wget=1.21.3-r0 coreutils=9.1-r0 && \
+    apk add --no-cache openjdk${JAVA}=${JAVA_VERSION} bash=5.1.16-r2 curl=7.83.1-r3 git=2.36.2-r0 unzip=6.0-r9 wget=1.21.3-r0 coreutils=9.1-r0 gcompat=1.0.0-r4 && \
     rm -rf /tmp/* && \
     rm -rf /var/cache/apk/* && \
     wget -q https://dl.google.com/android/repository/commandlinetools-linux-${SDK_TOOLS}_latest.zip -O /tmp/tools.zip && \
