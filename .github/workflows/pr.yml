@@ -51,6 +51,27 @@ jobs:
           # Set output
           echo "::set-output name=matrix::$( echo "$JSON" )"
 
+  correct-path:
+    needs: find-changed-files
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix: ${{fromJson(needs.find-changed-files.outputs.matrix)}}
+    steps:
+      - name: Correct name of image
+        run: |
+          NAME=$(basename "$(dirname "${{ matrix.dockerfile }}")")
+          if [[ "$NAME" == "images" ]]; then
+            exit 1
+          fi
+
+      - name: Correct tag of image
+        run: |
+          TAG=$(basename "${{ matrix.dockerfile }}")
+          if [[ "$TAG" != "v"* ]]; then
+            exit 1
+          fi  
+
   hadolint:
     needs: find-changed-files
     runs-on: ubuntu-latest
