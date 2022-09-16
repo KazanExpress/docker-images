@@ -1,3 +1,9 @@
+## v0.100.1 (2022-09-16)
+
+### Fix
+
+- **android**: Install jq and curl to image INFR-25 (#90)
+
 ## v0.100.0 (2022-09-14)
 
 ### Feat
