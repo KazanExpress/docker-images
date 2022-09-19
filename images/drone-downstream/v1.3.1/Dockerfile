@@ -14,6 +14,6 @@ RUN cp ./drone-downstream /drone-downstream
 
 FROM alpine:3.15.0
 
-COPY --from=build /drone-downstream /usr/bin/drone-downstream
+COPY --from=build /drone-downstream /bin/drone-downstream
 
 ENTRYPOINT [ "drone-downstream" ]
