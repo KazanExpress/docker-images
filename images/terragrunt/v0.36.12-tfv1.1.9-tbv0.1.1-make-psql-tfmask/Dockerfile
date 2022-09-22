@@ -13,7 +13,7 @@ ENV TFMASK_VALUES_REGEX="(?i)^.*[^a-zA-Z](oauth|secret|certificate|token|passwor
 
 ADD https://github.com/gruntwork-io/terragrunt/releases/download/${TERRAGRUNT}/terragrunt_linux_amd64 /usr/local/bin/terragrunt
 #ADD https://github.com/cloudposse/tfmask/releases/download/${TFMASK_VERSION}/tfmask_linux_amd64 /usr/local/bin/tfmask
-ADD tfmask /usr/local/bin/tfmask
+COPY tfmask /usr/local/bin/tfmask
 
 RUN apk add --update --no-cache "bash>=5.1.15" "git>=2.34.2" "openssh>=8.8" "jq>=1.6-r1" "curl>=7.80.0" "ansible>=4.8.0" "make>=4.3-r0" "postgresql-client>=3.15" \
     && chmod +x /usr/local/bin/terragrunt && chmod +x /usr/local/bin/tfmask
