@@ -1,3 +1,9 @@
+## v0.103.0 (2022-09-26)
+
+### Feat
+
+- add PostgreSQL image for integration tests (#93)
+
 ## v0.102.0 (2022-09-22)
 
 ### Feat
