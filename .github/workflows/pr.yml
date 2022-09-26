@@ -4,6 +4,8 @@ on:
   pull_request:
     branches:
       - master
+    paths:
+      - images/**
 
 jobs:
   find-changed-files:
@@ -68,9 +70,9 @@ jobs:
       - name: Correct tag of image
         run: |
           TAG=$(basename "${{ matrix.dockerfile }}")
-          if [[ "$TAG" != "v"* ]]; then
+          if ! [[ "$TAG" =~ [0-9] ]]; then
             exit 1
-          fi  
+          fi
 
   hadolint:
     needs: find-changed-files
