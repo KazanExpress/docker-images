@@ -19,7 +19,6 @@ RUN apk add --no-cache "bash>=5.1.15" "curl=>7.80.0" && \
 
 FROM hashicorp/terraform:1.1.9
 ARG TERRAGRUNT=v0.36.12
-ARG TFMASK_VERSION=0.7.0
 ENV TFMASK_VALUES_REGEX="(?i)^.*[^a-zA-Z](oauth|secret|certificate|token|password|key|result).*$" \
     TF_CLI_ARGS="-no-color"
 
