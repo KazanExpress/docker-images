@@ -1,3 +1,9 @@
+## v0.104.0 (2022-09-27)
+
+### Feat
+
+- **terragrunt**: fix tfmask binary (#97)
+
 ## v0.103.0 (2022-09-26)
 
 ### Feat
