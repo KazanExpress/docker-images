@@ -1,3 +1,10 @@
+## v0.106.0 (2022-09-29)
+
+### Feat
+
+- add terrascan
+- add terrascan image
+
 ## v0.105.0 (2022-09-27)
 
 ### Feat
