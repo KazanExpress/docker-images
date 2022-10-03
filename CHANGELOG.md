@@ -1,3 +1,9 @@
+## v0.108.0 (2022-10-03)
+
+### Feat
+
+- image for helm with pybump (#99)
+
 ## v0.107.0 (2022-09-30)
 
 ### Feat
