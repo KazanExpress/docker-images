@@ -1,3 +1,9 @@
+## v0.108.1 (2022-10-03)
+
+### Fix
+
+- change terrascan bin version
+
 ## v0.108.0 (2022-10-03)
 
 ### Feat
