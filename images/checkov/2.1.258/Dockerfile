@@ -1,4 +1,4 @@
-FROM bridgecrew/checkov
+FROM bridgecrew/checkov:2.1.258
 
 ARG TERRAGRUNT=v0.36.12
 ARG TERRAFORM=1.3.2
