@@ -1,3 +1,18 @@
+## v0.110.0 (2022-10-11)
+
+### Fix
+
+- terraform install command
+- remov SC2261
+- change version for libs
+- hadolint check
+- add checkov version
+- remove terrascan
+
+### Feat
+
+- add checkov image with tf
+
 ## v0.109.0 (2022-10-10)
 
 ### Feat
