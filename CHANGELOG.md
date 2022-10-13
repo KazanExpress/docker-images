@@ -1,3 +1,9 @@
+## v0.112.0 (2022-10-13)
+
+### Feat
+
+- update terragrunt image
+
 ## v0.111.0 (2022-10-13)
 
 ### Feat
