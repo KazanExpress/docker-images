@@ -1,3 +1,9 @@
+## v0.112.1 (2022-10-14)
+
+### Fix
+
+- image for shell-exporter
+
 ## v0.112.0 (2022-10-13)
 
 ### Feat
