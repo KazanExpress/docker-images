@@ -2,8 +2,8 @@ FROM docker.io/library/alpine:3.16
 
 RUN apk add --no-cache "bash>=5.1.15" "curl=>7.80.0" "jq=>1.5"
 
-COPY shell-exp/shell-exporter /opt/shell-exp/
+COPY shell-exp/shell-exporter /usr/bin/ 
 
-WORKDIR /opt/shell-exp
+CMD ["chmod +x /usr/bin/shell-exporter"]
 
-CMD [ "bash", "-c", "./shell-exporter --port 9600 --f /opt/metrics" ]
+ENTRYPOINT [ "bash", "-c", "shell-exporter --port 9600 --f /opt/metrics" ]
