@@ -1,3 +1,9 @@
+## v0.112.2 (2022-10-18)
+
+### Fix
+
+- **shell-exporter**: fix entrypoint
+
 ## v0.112.1 (2022-10-14)
 
 ### Fix
