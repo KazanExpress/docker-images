@@ -1,7 +1,9 @@
-FROM docker.io/library/alpine:3.16
+FROM docker.io/library/debian:stable-slim
 
-RUN apk add --no-cache "bash>=5.1.15" "curl=>7.80.0" "jq=>1.5"
+RUN apt-get update && apt-get -y install curl jq
 
 COPY shell-exp/shell-exporter /usr/bin/ 
 
-ENTRYPOINT [ "bash", "-c", "shell-exporter --port 9600 --f /opt/metrics" ]
+RUN chmod +x /usr/bin/shell-exporter
+
+ENTRYPOINT [ "bash", "-c", "/usr/bin/shell-exporter --port 9600 --f /opt/metrics" ]
