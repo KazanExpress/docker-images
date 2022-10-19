@@ -1,3 +1,9 @@
+## v0.112.3 (2022-10-19)
+
+### Fix
+
+- **shell-exporter**: remove chmod
+
 ## v0.112.2 (2022-10-18)
 
 ### Fix
