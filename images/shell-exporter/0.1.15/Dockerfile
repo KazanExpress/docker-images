@@ -1,6 +1,6 @@
 FROM docker.io/library/debian:stable-slim
 
-RUN apt-get update && apt-get -y --no-install-recommends install "curl=>7.70.0" "jq=>1.5" && apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get -y --no-install-recommends install "curl=7.74.0-1.3+deb11u3" "jq=1.6-2.1" && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /opt/metrics
 
