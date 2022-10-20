@@ -1,3 +1,10 @@
+## v0.112.4 (2022-10-20)
+
+### Fix
+
+- non root
+- **shell-exporter**: change base image
+
 ## v0.112.3 (2022-10-19)
 
 ### Fix
