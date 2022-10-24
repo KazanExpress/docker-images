@@ -1,6 +1,6 @@
 FROM alpine/helm:3.10.1 as helm
 
-FROM alpine:latest
+FROM alpine:3.16.2
 
 RUN apk add --no-cache "bash>=5.1.16-r2" "curl>=7.83.1-r2" "tar>=1.34" "gzip>=1.12"
 
