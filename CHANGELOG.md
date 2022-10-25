@@ -1,3 +1,10 @@
+## v0.113.0 (2022-10-25)
+
+### Feat
+
+- add kubectl-helm image to psb project
+- add kubectl-helm image to psb project
+
 ## v0.112.4 (2022-10-20)
 
 ### Fix
