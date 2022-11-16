@@ -1,3 +1,9 @@
+## v0.116.0 (2022-11-16)
+
+### Feat
+
+- add node image with allurectl DEVOPSDUTY-415 (#112)
+
 ## v0.115.0 (2022-11-09)
 
 ### Feat
