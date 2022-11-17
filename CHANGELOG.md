@@ -1,3 +1,9 @@
+## v0.117.0 (2022-11-17)
+
+### Feat
+
+- **grok-exporter**: add grok-exporter
+
 ## v0.116.0 (2022-11-16)
 
 ### Feat
