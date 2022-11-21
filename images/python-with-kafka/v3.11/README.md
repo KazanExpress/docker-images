@@ -1,0 +1,1 @@
+This is Python 3.11 official image with librdkafka built from source code.
