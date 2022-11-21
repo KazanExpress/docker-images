@@ -3,7 +3,8 @@ ENV PYTHONUNBUFFERED 1
 
 WORKDIR /tmp
 RUN git clone https://github.com/edenhill/librdkafka.git
-WORKDIR librdkafka
+WORKDIR /tmp/librdkafka
 RUN ./configure --prefix=/usr  \
     && make  \
-    && make install
+    && make install \
+RUN rm -rf /tmp/librdkafka
