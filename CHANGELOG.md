@@ -1,3 +1,15 @@
+## v0.119.0 (2022-11-21)
+
+### Feat
+
+- bump checkov image
+
+## v0.118.0 (2022-11-18)
+
+### Feat
+
+- **node**: add image for 16.13.2 with allurectl (#115)
+
 ## v0.117.0 (2022-11-17)
 
 ### Feat
