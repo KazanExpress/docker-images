@@ -1,0 +1,19 @@
+global:
+  config_version: 3
+input:
+  type: file
+  path: /log_pc/test.log 
+  readall: true
+  fail_on_missing_logfile: false
+imports:
+- type: grok_patterns
+  dir: /opt/grok_exporter/patterns/
+metrics:
+- type: counter
+  name: grok_example_lines_total
+  help: Counter metric example with labels.
+  match: 'ts=%{TIMESTAMP_ISO8601}'
+  labels:
+    logfile: '{{base .logfile}}'
+server:
+  port: 9144
