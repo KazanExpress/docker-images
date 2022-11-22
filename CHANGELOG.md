@@ -1,3 +1,9 @@
+## v0.121.0 (2022-11-22)
+
+### Feat
+
+- **python**: add python image with kafka built from source (#117)
+
 ## v0.120.0 (2022-11-21)
 
 ### Feat
