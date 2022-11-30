@@ -1,5 +1,4 @@
-# hadolint ignore=DL3007
-FROM quay.io/prometheus/busybox-linux-amd64:latest
+FROM busybox:1.35.0
 
 COPY ./build/jiralert /bin/jiralert
 
