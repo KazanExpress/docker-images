@@ -1,3 +1,17 @@
+## v0.123.0 (2022-11-30)
+
+### Fix
+
+- hadolint
+- hadolint
+- hadolint
+- hadolint
+
+### Feat
+
+- add jiralert
+- add jiralert
+
 ## v0.122.0 (2022-11-28)
 
 ### Feat
