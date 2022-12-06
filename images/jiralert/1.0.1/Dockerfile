@@ -1,4 +1,4 @@
-FROM busybox:1.35.0
+FROM quay.io/prometheus/busybox-linux-amd64:uclibc
 
 COPY ./build/jiralert /bin/jiralert
 
