@@ -12,6 +12,7 @@ RUN cp ./file.d /file.d
 
 FROM alpine:3.15.0
 
-COPY --from=build /file.d /bin/file.d
+RUN mkdir /file.d
+COPY --from=build /file.d /file.d/file.d
 
-ENTRYPOINT [ "file.d" ]
+ENTRYPOINT [ "/file.d/file.d" ]
