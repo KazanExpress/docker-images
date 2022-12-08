@@ -6,8 +6,6 @@ USER root
 
 ARG GF_INSTALL_IMAGE_RENDERER_PLUGIN="false"
 
-ARG GF_INSTALL_FLOWCHARTING_PLUGIN="true"
-
 ARG GF_GID="0"
 
 ENV GF_PATHS_PLUGINS="/var/lib/grafana-plugins"
@@ -38,6 +36,8 @@ RUN if [ $GF_INSTALL_IMAGE_RENDERER_PLUGIN = "true" ]; then \
     --pluginUrl https://github.com/grafana/grafana-image-renderer/releases/latest/download/plugin-linux-x64-glibc-no-chromium.zip \
     plugins install grafana-image-renderer; \
     fi
+
+ARG GF_INSTALL_FLOWCHARTING_PLUGIN="true"
 
 RUN if [ $GF_INSTALL_FLOWCHARTING_PLUGIN = "true" ]; then \
     grafana-cli \
