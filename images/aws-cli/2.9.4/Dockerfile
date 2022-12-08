@@ -1,6 +1,7 @@
 FROM public.ecr.aws/amazonlinux/amazonlinux:2 as installer
-RUN yum update -y \
+RUN yum update -y --security \
   && yum install -y unzip \
+  && yum clean all \
   && curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
   && unzip "awscliv2.zip" \
   # The --bin-dir is specified so that we can copy the
@@ -11,7 +12,7 @@ RUN yum update -y \
   && ./aws/install --bin-dir /aws-cli-bin/
 
 FROM public.ecr.aws/amazonlinux/amazonlinux:2
-RUN yum update -y \
+RUN yum update -y --security \
   && yum install -y less groff \
   && yum clean all
 COPY --from=installer /usr/local/aws-cli/ /usr/local/aws-cli/
