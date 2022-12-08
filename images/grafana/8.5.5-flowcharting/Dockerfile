@@ -37,9 +37,8 @@ RUN if [ $GF_INSTALL_IMAGE_RENDERER_PLUGIN = "true" ]; then \
     --pluginsDir "$GF_PATHS_PLUGINS" \
     --pluginUrl https://github.com/grafana/grafana-image-renderer/releases/latest/download/plugin-linux-x64-glibc-no-chromium.zip \
     plugins install grafana-image-renderer; \
-    fi
-
-RUN if [ $GF_INSTALL_FLOWCHARTING_PLUGIN = "true" ]; then \
+    fi \
+    if [ $GF_INSTALL_FLOWCHARTING_PLUGIN = "true" ]; then \
     grafana-cli \
     --pluginsDir "$GF_PATHS_PLUGINS" \
     --pluginUrl https://algenty.github.io/flowcharting-repository/archives/agenty-flowcharting-panel-1.0.0d.220606199-SNAPSHOT.zip \
