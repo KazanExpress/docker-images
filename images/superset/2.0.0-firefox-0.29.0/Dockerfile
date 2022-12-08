@@ -4,7 +4,7 @@ LABEL maintainer="Yuriy Gavrilin <yuriy@kazanexpress.ru>"
 
 USER root
 RUN apt-get update && \
-    apt-get install --no-install-recommends -y firefox-esr=91.13.0 && \
+    apt-get install --no-install-recommends -y firefox-esr=91.13.0esr-1~deb11u1 && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
