@@ -1,3 +1,14 @@
+## v0.127.0 (2022-12-09)
+
+### Fix
+
+- **superset**: fix firefox-esr version
+- **superset**: fix linter warnings
+
+### Feat
+
+- **superset**: added superset 2.0 w headless firefox image
+
 ## v0.126.0 (2022-12-09)
 
 ### Feat
