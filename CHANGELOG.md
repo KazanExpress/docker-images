@@ -1,3 +1,9 @@
+## v0.128.0 (2022-12-09)
+
+### Feat
+
+- **grafana**: add plugin agenty-flowcharting
+
 ## v0.127.0 (2022-12-09)
 
 ### Fix
