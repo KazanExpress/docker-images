@@ -14,6 +14,6 @@ RUN wget -q https://github.com/mozilla/geckodriver/releases/download/v${GECKODRI
     chmod 755 /usr/bin/geckodriver && \
     rm geckodriver-v${GECKODRIVER_VERSION}-linux64.tar.gz
 
-RUN pip install --no-cache --no-cache-dir gevent~=22.10 psycopg2~=2.9 redis~=4.4 clickhouse-connect~=0.4 Authlib~=1.2 shillelagh==1.1.5
+RUN pip install --no-cache --no-cache-dir gevent~=22.10 psycopg2~=2.9 redis~=4.4 clickhouse-connect~=0.4 Authlib~=1.2 shillelagh[all]==1.1.5
 
 USER superset
