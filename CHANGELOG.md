@@ -1,3 +1,13 @@
+## v0.131.0 (2022-12-21)
+
+### Fix
+
+- **superset**: fix linter errors for RUN statements
+
+### Feat
+
+- **superset**: upgrade to 2.0.1
+
 ## v0.130.0 (2022-12-20)
 
 ### Feat
