@@ -42,11 +42,12 @@ RUN \
 #COPY conf ${HIVE_HOME}/conf
 COPY scripts/entrypoint.sh "${HIVE_HOME}/entrypoint.sh"
 
-# hadolint ignore=SC2046
 # imagebuilder expects the directory to be created before VOLUME
 RUN mkdir -p /var/lib/hive /.beeline "${HOME}/.beeline" && \
 # to allow running as non-root
+# hadolint ignore=SC2046
     chown -R 1002:0 "${HIVE_HOME}" "${HADOOP_HOME}" /var/lib/hive /.beeline "${HOME}/.beeline" /etc/passwd $(readlink -f "${JAVA_HOME}"/lib/security/cacerts) && \
+# hadolint ignore=SC2046
     chmod -R u+rwx,g+rwx "${HIVE_HOME}" "${HADOOP_HOME}" /var/lib/hive /.beeline "${HOME}/.beeline" /etc/passwd $(readlink -f "${JAVA_HOME}"/lib/security/cacerts) && \
     chown 1002:0 "${HIVE_HOME}/entrypoint.sh" && chmod +x "${HIVE_HOME}/entrypoint.sh"
 
