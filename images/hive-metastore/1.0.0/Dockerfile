@@ -7,6 +7,7 @@ ENV HADOOP_VERSION=2.7.3
 ENV HIVE_HOME=/opt/hive
 ENV HIVE_VERSION=3.1.2
 
+SHELL ["/bin/sh", "-o", "pipefail", "-c"]
 RUN mkdir "${HIVE_HOME}" && \
     mkdir "${HADOOP_HOME}" && \
     apt-get update && \
@@ -51,4 +52,4 @@ RUN mkdir -p /var/lib/hive /.beeline "${HOME}/.beeline" && \
 WORKDIR $HIVE_HOME
 EXPOSE 9083
 
-ENTRYPOINT ["/bin/sh", "-o", "pipefail", "-c", "/opt/hive/entrypoint.sh"]
+ENTRYPOINT ["/bin/sh", "-c", "/opt/hive/entrypoint.sh"]
