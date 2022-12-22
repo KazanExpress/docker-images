@@ -7,8 +7,8 @@ ENV HADOOP_VERSION=2.7.3
 ENV HIVE_HOME=/opt/hive
 ENV HIVE_VERSION=3.1.2
 
-RUN set -o pipefail && \
-    mkdir "${HIVE_HOME}" && \
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+RUN mkdir "${HIVE_HOME}" && \
     mkdir "${HADOOP_HOME}" && \
     apt-get update && \
     apt-get -y --no-install-recommends upgrade && \
