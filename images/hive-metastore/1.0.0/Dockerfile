@@ -7,23 +7,20 @@ ENV HADOOP_VERSION=2.7.3
 ENV HIVE_HOME=/opt/hive
 ENV HIVE_VERSION=3.1.2
 
-RUN mkdir ${HIVE_HOME}
-RUN mkdir ${HADOOP_HOME}
-RUN apt-get clean && \
+RUN mkdir ${HIVE_HOME} && \
+    mkdir ${HADOOP_HOME} && \
+    apt-get clean && \
     apt-get update && \
     apt-get upgrade -y && \
-    apt-get -qqy install curl && \
+    apt-get -qqy install curl=7.74.0-1.3+deb11u3 && \
     curl -L "https://dlcdn.apache.org/hive/hive-${HIVE_VERSION}/apache-hive-${HIVE_VERSION}-bin.tar.gz" | tar zxf - && \
     curl -L "https://archive.apache.org/dist/hadoop/common/hadoop-${HADOOP_VERSION}/hadoop-${HADOOP_VERSION}.tar.gz" | tar zxf - && \
     mv apache-hive-${HIVE_VERSION}-bin/* ${HIVE_HOME} && \
     mv hadoop-${HADOOP_VERSION}/* ${HADOOP_HOME} && \
-    apt-get install --only-upgrade openssl libssl1.1 libexpat1 && \
-    apt-get install -y libk5crypto3 libkrb5-3 libsqlite3-0
-
-RUN rm ${HIVE_HOME}/lib/postgresql-9.4.1208.jre7.jar
-
-RUN curl -o ${HIVE_HOME}/lib/postgresql-42.2.25.jre7.jar -L https://jdbc.postgresql.org/download/postgresql-42.2.25.jre7.jar
-
+    apt-get install --only-upgrade openssl=1.1.1n-0+deb11u3 libssl1.1=1.1.1n-0+deb11u3 libexpat1=2.2.10-2+deb11u5 && \
+    apt-get install -y libk5crypto3=1.18.3-6+deb11u3 libkrb5-3=1.18.3-6+deb11u3 libsqlite3-0=3.34.1-3 && \
+    rm ${HIVE_HOME}/lib/postgresql-9.4.1208.jre7.jar && \
+    curl -o ${HIVE_HOME}/lib/postgresql-42.2.25.jre7.jar -L https://jdbc.postgresql.org/download/postgresql-42.2.25.jre7.jar
 
 
 # Remove vulnerable Log4j version and install latest
@@ -41,15 +38,13 @@ RUN \
     curl -o ${HIVE_HOME}/lib/log4j-slf4j-impl-${LOG4J_VERSION}.jar ${LOG4J_LOCATION}/log4j-slf4j-impl/${LOG4J_VERSION}/log4j-slf4j-impl-${LOG4J_VERSION}.jar
 
 
-
-
 #COPY conf ${HIVE_HOME}/conf
 COPY scripts/entrypoint.sh ${HIVE_HOME}/entrypoint.sh
 
 # imagebuilder expects the directory to be created before VOLUME
-RUN mkdir -p /var/lib/hive /.beeline ${HOME}/.beeline
+RUN mkdir -p /var/lib/hive /.beeline ${HOME}/.beeline && \
 # to allow running as non-root
-RUN chown -R 1002:0 ${HIVE_HOME} ${HADOOP_HOME} /var/lib/hive /.beeline ${HOME}/.beeline /etc/passwd $(readlink -f ${JAVA_HOME}/lib/security/cacerts) && \
+    chown -R 1002:0 ${HIVE_HOME} ${HADOOP_HOME} /var/lib/hive /.beeline ${HOME}/.beeline /etc/passwd $(readlink -f ${JAVA_HOME}/lib/security/cacerts) && \
     chmod -R u+rwx,g+rwx ${HIVE_HOME} ${HADOOP_HOME} /var/lib/hive /.beeline ${HOME}/.beeline /etc/passwd $(readlink -f ${JAVA_HOME}/lib/security/cacerts) && \
     chown 1002:0 ${HIVE_HOME}/entrypoint.sh && chmod +x ${HIVE_HOME}/entrypoint.sh
 
