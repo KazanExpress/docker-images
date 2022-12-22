@@ -45,8 +45,8 @@ COPY scripts/entrypoint.sh "${HIVE_HOME}/entrypoint.sh"
 # imagebuilder expects the directory to be created before VOLUME
 RUN mkdir -p /var/lib/hive /.beeline "${HOME}/.beeline" && \
 # to allow running as non-root
-    chown -R 1002:0 "${HIVE_HOME}" "${HADOOP_HOME}" /var/lib/hive /.beeline "${HOME}/.beeline" /etc/passwd "$(readlink -f ${JAVA_HOME}/lib/security/cacerts)" && \
-    chmod -R u+rwx,g+rwx "${HIVE_HOME}" "${HADOOP_HOME}" /var/lib/hive /.beeline "${HOME}/.beeline" /etc/passwd "$(readlink -f ${JAVA_HOME}/lib/security/cacerts)" && \
+    chown -R 1002:0 "${HIVE_HOME}" "${HADOOP_HOME}" /var/lib/hive /.beeline "${HOME}/.beeline" /etc/passwd $(readlink -f "${JAVA_HOME}"/lib/security/cacerts) && \
+    chmod -R u+rwx,g+rwx "${HIVE_HOME}" "${HADOOP_HOME}" /var/lib/hive /.beeline "${HOME}/.beeline" /etc/passwd $(readlink -f ${"JAVA_HOME}"/lib/security/cacerts)" && \
     chown 1002:0 "${HIVE_HOME}/entrypoint.sh" && chmod +x "${HIVE_HOME}/entrypoint.sh"
 
 WORKDIR $HIVE_HOME
