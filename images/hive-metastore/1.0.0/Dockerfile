@@ -9,19 +9,19 @@ ENV HIVE_VERSION=3.1.2
 
 RUN mkdir ${HIVE_HOME} && \
     mkdir ${HADOOP_HOME} && \
-    apt-get clean && \
     apt-get update && \
-    apt-get upgrade -y && \
+    apt-get upgrade -qqy --no-install-recommends && \
     apt-get -qqy install curl=7.74.0-1.3+deb11u3 && \
     curl -L "https://dlcdn.apache.org/hive/hive-${HIVE_VERSION}/apache-hive-${HIVE_VERSION}-bin.tar.gz" | tar zxf - && \
     curl -L "https://archive.apache.org/dist/hadoop/common/hadoop-${HADOOP_VERSION}/hadoop-${HADOOP_VERSION}.tar.gz" | tar zxf - && \
     mv apache-hive-${HIVE_VERSION}-bin/* ${HIVE_HOME} && \
     mv hadoop-${HADOOP_VERSION}/* ${HADOOP_HOME} && \
     apt-get install --only-upgrade openssl=1.1.1n-0+deb11u3 libssl1.1=1.1.1n-0+deb11u3 libexpat1=2.2.10-2+deb11u5 && \
-    apt-get install -y libk5crypto3=1.18.3-6+deb11u3 libkrb5-3=1.18.3-6+deb11u3 libsqlite3-0=3.34.1-3 && \
+    apt-get install -qqy libk5crypto3=1.18.3-6+deb11u3 libkrb5-3=1.18.3-6+deb11u3 libsqlite3-0=3.34.1-3 && \
     rm ${HIVE_HOME}/lib/postgresql-9.4.1208.jre7.jar && \
-    curl -o ${HIVE_HOME}/lib/postgresql-42.2.25.jre7.jar -L https://jdbc.postgresql.org/download/postgresql-42.2.25.jre7.jar
-
+    curl -o ${HIVE_HOME}/lib/postgresql-42.2.25.jre7.jar -L https://jdbc.postgresql.org/download/postgresql-42.2.25.jre7.jar && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 # Remove vulnerable Log4j version and install latest
 ARG LOG4J_VERSION=2.17.1
@@ -51,4 +51,4 @@ RUN mkdir -p /var/lib/hive /.beeline ${HOME}/.beeline && \
 WORKDIR $HIVE_HOME
 EXPOSE 9083
 
-ENTRYPOINT ["sh", "-c", "/opt/hive/entrypoint.sh"]
+ENTRYPOINT ["/bin/sh", "-o", "pipefail", "-c", "/opt/hive/entrypoint.sh"]
