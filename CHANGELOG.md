@@ -1,3 +1,14 @@
+## v0.133.0 (2022-12-28)
+
+### Fix
+
+- **superset**: quiet wget
+- **superset**: fix
+
+### Feat
+
+- **superset**: add kafka dependency
+
 ## v0.132.0 (2022-12-22)
 
 ### Feat
