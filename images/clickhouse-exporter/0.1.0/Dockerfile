@@ -7,10 +7,10 @@ WORKDIR /go/src/github.com/ClickHouse/clickhouse_exporter
 RUN make init && make
 
 
-FROM frolvlad/alpine-glibc:alpine-3.13
+FROM alpine:3.17
 
 COPY --from=BUILD /go/bin/clickhouse_exporter /usr/local/bin/clickhouse_exporter
-RUN apk update && apk add ca-certificates=20220614-r0 --no-cache && rm -rf /var/cache/apk/*
+RUN apk update && apk add ca-certificates=20220614-r3 --no-cache && rm -rf /var/cache/apk/*
 
 RUN adduser -D clickhouse-exporter
 
