@@ -18,5 +18,6 @@ USER clickhouse-exporter
 
 ENV CLICKHOUSE_USER="user"
 ENV CLICKHOUSE_PASSWORD="password"
+ENV SCRAPE_URI="http://localhost:8123/"
 
 ENTRYPOINT ["/usr/local/bin/clickhouse_exporter"]
