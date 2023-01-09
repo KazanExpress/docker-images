@@ -4,11 +4,9 @@ RUN mkdir /app
 
 WORKDIR /app
 
-RUN git clone --branch master https://github.com/ClickHouse/clickhouse_exporter.git
+RUN git clone --branch master  https://github.com/KazanExpress/clickhouse_exporter.git
 
 WORKDIR /app/clickhouse_exporter
-
-COPY ./clickhouse_exporter.go /app/clickhouse_exporter/
 
 RUN make init && make
 
