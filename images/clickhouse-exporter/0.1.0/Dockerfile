@@ -1,23 +1,30 @@
 FROM golang:1.16 AS BUILD
 
-COPY . /go/src/github.com/ClickHouse/clickhouse_exporter
+RUN mkdir /app
 
-WORKDIR /go/src/github.com/ClickHouse/clickhouse_exporter
+WORKDIR /app
+
+RUN git clone --branch master https://github.com/ClickHouse/clickhouse_exporter.git
+
+WORKDIR /app/clickhouse_exporter
+
+COPY ./clickhouse_exporter.go /app/clickhouse_exporter/
 
 RUN make init && make
 
-
-FROM alpine:3.17
+FROM frolvlad/alpine-glibc:alpine-3.17
 
 COPY --from=BUILD /go/bin/clickhouse_exporter /usr/local/bin/clickhouse_exporter
-RUN apk update && apk add ca-certificates=20220614-r3 --no-cache && rm -rf /var/cache/apk/*
+RUN apk update && apk add ca-certificates=20220614-r4 --no-cache && rm -rf /var/cache/apk/*
+
 
 RUN adduser -D clickhouse-exporter
 
 USER clickhouse-exporter
 
 ENV CLICKHOUSE_USER="user"
-ENV CLICKHOUSE_PASSWORD="password"
+ENV CLICKHOUSE_PASSWORD="passwd"
 ENV SCRAPE_URI="http://localhost:8123/"
 
 ENTRYPOINT ["/usr/local/bin/clickhouse_exporter"]
+
