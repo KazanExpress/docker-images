@@ -1,3 +1,9 @@
+## v0.134.0 (2023-01-10)
+
+### Feat
+
+- **clickhouse-exporter**: add image (#131)
+
 ## v0.133.0 (2022-12-28)
 
 ### Fix
