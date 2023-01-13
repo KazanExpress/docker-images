@@ -21,8 +21,8 @@ RUN mkdir "${HIVE_HOME}" && \
     apt-get -y --no-install-recommends install  libk5crypto3=1.18.3-6+deb11u3 libkrb5-3=1.18.3-6+deb11u3 libsqlite3-0=3.34.1-3 && \
     rm "${HIVE_HOME}/lib/postgresql-9.4.1208.jre7.jar" && \
     curl -o "${HIVE_HOME}/lib/postgresql-42.2.25.jre7.jar" -L https://jdbc.postgresql.org/download/postgresql-42.2.25.jre7.jar && \
-    curl -o "${HIVE_HOME}/lib/hadoop-aws-3.3.4.jar" -L https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.3.4/hadoop-aws-3.3.4.jar && \
-    curl -o "${HIVE_HOME}/lib/aws-java-sdk-bundle-1.12.262.jar" -L https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.12.348/aws-java-sdk-bundle-1.12.262.jar && \
+    curl -o "${HIVE_HOME}/lib/hadoop-aws-3.3.3.jar" -L https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.3.3/hadoop-aws-3.3.3.jar && \
+    curl -o "${HIVE_HOME}/lib/aws-java-sdk-bundle-1.12.262.jar" -L https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.12.262/aws-java-sdk-bundle-1.12.262.jar && \
     apt-get clean && \
     rm -rf "/var/lib/apt/lists/*"
 
