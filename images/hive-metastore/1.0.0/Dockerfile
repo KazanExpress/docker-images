@@ -3,7 +3,7 @@ FROM azul/zulu-openjdk-debian:8
 WORKDIR /opt
 
 ENV HADOOP_HOME=/opt/hadoop
-ENV HADOOP_VERSION=2.7.3
+ENV HADOOP_VERSION=3.3.3
 ENV HIVE_HOME=/opt/hive
 ENV HIVE_VERSION=3.1.2
 
