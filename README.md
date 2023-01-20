@@ -42,3 +42,4 @@ ghcr.io/kazanexpress/github-cli:v1
 We follow [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/) rules and use [commitizen](https://commitizen-tools.github.io/commitizen/) to release new version.
 
 If commit message does not meet convention, build will fail!
+
