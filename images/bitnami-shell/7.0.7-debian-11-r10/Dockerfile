@@ -1,0 +1,1 @@
+FROM bitnami/redis-sentinel:7.0.7-debian-11-r10

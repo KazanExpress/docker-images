@@ -1,0 +1,1 @@
+FROM bitnami/redis-exporter:1.45.0-debian-11-r26
