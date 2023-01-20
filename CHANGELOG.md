@@ -1,3 +1,9 @@
+## v0.135.0 (2023-01-20)
+
+### Feat
+
+- **redis**: add redis dockerfile INFR-604 (#133)
+
 ## v0.134.1 (2023-01-13)
 
 ### Fix
