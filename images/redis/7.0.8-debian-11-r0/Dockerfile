@@ -1,0 +1,1 @@
+FROM bitnami/redis:7.0.8-debian-11-r0
