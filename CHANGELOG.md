@@ -1,3 +1,9 @@
+## v0.138.0 (2023-01-29)
+
+### Feat
+
+- **superset**: upgrade clickhouse-connect package
+
 ## v0.137.0 (2023-01-25)
 
 ### Feat
