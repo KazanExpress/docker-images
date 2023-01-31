@@ -32,4 +32,7 @@ RUN set -eux; \
     sdkmanager --sdk_root="${ANDROID_SDK_ROOT}" --install "build-tools;${BUILD_TOOLS}" "platforms;android-${TARGET_SDK}" && \
     sdkmanager --sdk_root="${ANDROID_SDK_ROOT}" --uninstall emulator
 
+RUN apt-get -y install git
+
+
 CMD ["jshell"]
