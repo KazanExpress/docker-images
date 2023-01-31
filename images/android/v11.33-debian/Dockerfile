@@ -19,7 +19,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN set -eux; \
 	apt-get update; \
 	apt-get install -y --no-install-recommends \
-    ca-certificates=20210119 wget=1.21-1+deb11u1 unzip=6.0-26+deb11u1 curl=7.74.0-1.3+deb11u3 jq=1.6-2.1 openjdk-${JAVA}-jdk-headless=${JAVA_VER} && \
+    ca-certificates=20210119 wget=1.21-1+deb11u1 unzip=6.0-26+deb11u1 curl=7.74.0-1.3+deb11u3 git jq=1.6-2.1 openjdk-${JAVA}-jdk-headless=${JAVA_VER} && \
 	rm -rf /var/lib/apt/lists/* && \
     wget -q https://dl.google.com/android/repository/commandlinetools-linux-${SDK_TOOLS}_latest.zip -O /tmp/tools.zip && \
     mkdir -p ${ANDROID_SDK_ROOT}/cmdline-tools && \
