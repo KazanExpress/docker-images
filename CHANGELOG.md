@@ -1,3 +1,9 @@
+## v0.140.0 (2023-02-06)
+
+### Feat
+
+- **filed**: update version with kafka output (#139)
+
 ## v0.139.0 (2023-02-01)
 
 ### Feat
