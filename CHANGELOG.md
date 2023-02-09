@@ -1,3 +1,9 @@
+## v0.142.0 (2023-02-09)
+
+### Feat
+
+- **postfix**: add client-access restrictions
+
 ## v0.141.0 (2023-02-09)
 
 ### Fix
