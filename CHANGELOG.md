@@ -1,3 +1,14 @@
+## v0.141.0 (2023-02-09)
+
+### Fix
+
+- pin versions
+
+### Feat
+
+- **postfix**: add docker image with custom entrypoint
+- **filed**: update version with kafka output
+
 ## v0.140.0 (2023-02-06)
 
 ### Feat
