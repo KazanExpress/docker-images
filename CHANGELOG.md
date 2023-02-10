@@ -1,3 +1,9 @@
+## v0.142.1 (2023-02-10)
+
+### Fix
+
+- correct smtpd_restrinctions
+
 ## v0.142.0 (2023-02-09)
 
 ### Feat
