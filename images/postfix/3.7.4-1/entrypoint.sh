@@ -30,16 +30,9 @@ cat <<- EOF > /etc/postfix/main.cf
 	smtp_tls_session_cache_database = lmdb:\$data_directory/smtp_scache
 	smtp_use_tls = $USE_TLS
 	# MAIL FROM restrictions
-	smtpd_sender_restrictions =
-		permit_mynetworks,
-		reject_non_fqdn_sender,
-		reject_unknown_sender_domain,
-		reject
+	smtpd_sender_restrictions = permit_mynetworks reject_non_fqdn_sender reject_unknown_sender_domain reject
 	# RCPT TO restrictions
-	smtpd_recipient_restrictions =
-		reject_non_fqdn_recipient,
-		check_sender_access lmdb:/etc/postfix/sender_access,
-		reject
+	smtpd_recipient_restrictions = reject_non_fqdn_recipient check_sender_access lmdb:/etc/postfix/sender_access reject
 	# some tweaks
 	biff = no
 	delay_warning_time = 1h
