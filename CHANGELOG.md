@@ -1,3 +1,9 @@
+## v0.146.0 (2023-03-20)
+
+### Feat
+
+- add helm 3.11.2 with pybump image
+
 ## v0.145.0 (2023-03-06)
 
 ### Feat
