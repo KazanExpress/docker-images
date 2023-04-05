@@ -20,7 +20,7 @@ RUN curl -s -OJL https://github.com/mozilla/geckodriver/releases/download/v${GEC
 
 COPY requirements.txt /additional_requirements.txt
 RUN pip install --no-cache --no-cache-dir -r /additional_requirements.txt && \
-    pip install --no-cache --no-cache-dir prophet==1.0.1 && \
-    pip install --no-cache --no-cache-dir --force-reinstall git+https://github.com/benoitc/gunicorn.git@1efc5d91fa3dd2fad54cb931a9f7473499de5165
+    pip install --no-cache --no-cache-dir prophet==1.0.1
+    # pip install --no-cache --no-cache-dir --force-reinstall git+https://github.com/benoitc/gunicorn.git@1efc5d91fa3dd2fad54cb931a9f7473499de5165
 
 USER superset
