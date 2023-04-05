@@ -13,7 +13,7 @@ RUN mkdir --parents /usr/local/share/ca-certificates/Yandex && \
     chmod 655 /usr/local/share/ca-certificates/Yandex/YandexInternalRootCA.crt
 
 ENV GECKODRIVER_VERSION=0.33.0
-RUN curl -s -O https://github.com/mozilla/geckodriver/releases/download/v${GECKODRIVER_VERSION}/geckodriver-v${GECKODRIVER_VERSION}-linux64.tar.gz && \
+RUN curl -s -OJL https://github.com/mozilla/geckodriver/releases/download/v${GECKODRIVER_VERSION}/geckodriver-v${GECKODRIVER_VERSION}-linux64.tar.gz && \
     tar -x geckodriver -zf geckodriver-v${GECKODRIVER_VERSION}-linux64.tar.gz -O > /usr/bin/geckodriver && \
     chmod 755 /usr/bin/geckodriver && \
     rm geckodriver-v${GECKODRIVER_VERSION}-linux64.tar.gz
