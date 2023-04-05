@@ -1,4 +1,4 @@
-FROM apache/superset:2.0.1
+FROM apache/superset:2.1.0
 
 LABEL maintainer="Yuriy Gavrilin <yuriy@kazanexpress.ru>"
 
