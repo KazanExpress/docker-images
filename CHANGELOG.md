@@ -1,3 +1,12 @@
+## v0.147.1 (2023-04-06)
+
+### Fix
+
+- **superset**: god why they removed git? commented extra lib out for now
+- **superset**: add some curl magic
+- **superset**: change wget to curl
+- **superset**: fix typo in version name
+
 ## v0.147.0 (2023-04-05)
 
 ### Feat
