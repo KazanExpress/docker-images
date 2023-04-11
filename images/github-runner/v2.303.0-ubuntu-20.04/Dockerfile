@@ -25,6 +25,6 @@ RUN wget https://github.com/allure-framework/allurectl/releases/latest/download/
     chmod +x /home/runner/allurectl && \ 
     chown runner:runner /home/runner/allurectl && \
     wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
-    apt-get install ./google-chrome-stable_current_amd64.deb
+    apt-get install -y --no-install-recommends ./google-chrome-stable_current_amd64.deb
 
 USER runner
