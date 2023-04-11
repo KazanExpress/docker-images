@@ -21,7 +21,7 @@ RUN set -ex && \
     xdg-utils && \
     rm -rf /var/lib/apt/lists/*
 
-RUN wget https://github.com/allure-framework/allurectl/releases/latest/download/allurectl_linux_386 -O /home/runner/allurectl && \ 
+RUN wget -q https://github.com/allure-framework/allurectl/releases/latest/download/allurectl_linux_386 -O /home/runner/allurectl && \ 
     chmod +x /home/runner/allurectl && \ 
     chown runner:runner /home/runner/allurectl && \
     wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
