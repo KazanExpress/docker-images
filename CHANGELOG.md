@@ -1,3 +1,9 @@
+## v0.150.0 (2023-04-20)
+
+### Feat
+
+- add python image with jira and github libs (#163)
+
 ## v0.149.0 (2023-04-13)
 
 ### Feat
