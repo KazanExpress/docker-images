@@ -1,3 +1,9 @@
+## v0.151.0 (2023-04-25)
+
+### Feat
+
+- mirror bitnami postgres image (#164)
+
 ## v0.150.0 (2023-04-20)
 
 ### Feat
