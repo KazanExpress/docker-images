@@ -7,4 +7,3 @@ RUN elasticsearch-plugin install --batch \
   elasticsearch-plugin install --batch repository-s3
 
 COPY config/hunspell /usr/share/elasticsearch/config/hunspell
-COPY config/data/synonyms /usr/share/elasticsearch/config/synonyms
