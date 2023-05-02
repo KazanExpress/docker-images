@@ -1,3 +1,14 @@
+## v0.152.0 (2023-05-02)
+
+### Feat
+
+- **kibana**: added kibana version 8.6.2 (INFR-824)
+- **es**: added an image of version 8.6.2 elastic search (INFR-824)
+
+### Fix
+
+- **es**: deleting copying the synonyms directory because it is already included in dictionaries (INFR-824)
+
 ## v0.151.0 (2023-04-25)
 
 ### Feat
