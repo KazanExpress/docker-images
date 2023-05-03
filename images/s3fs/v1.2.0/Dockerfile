@@ -3,7 +3,7 @@ FROM alpine:3.16.0 AS build
 
 LABEL maintainer="Yuriy Gavrilin <yuriy@kazanexpress.ru>"
 
-ARG S3FS_VERSION=v1.86
+ARG S3FS_VERSION=v1.91
 
 # Install s3fs-s3fs
 RUN apk --no-cache add \
