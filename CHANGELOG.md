@@ -1,3 +1,9 @@
+## v0.153.0 (2023-05-10)
+
+### Feat
+
+- **kibana**: added plugin analyze-api-ui for version 8.6.2 (#167)
+
 ## v0.152.0 (2023-05-02)
 
 ### Feat
