@@ -1,3 +1,9 @@
+## v0.153.1 (2023-05-11)
+
+### Fix
+
+- **kibana**: upgrade kibana analyzeApiUi plugin version (#168)
+
 ## v0.153.0 (2023-05-10)
 
 ### Feat
