@@ -1,3 +1,9 @@
+## v0.154.0 (2023-05-17)
+
+### Feat
+
+- **elasticsearch**: build elasticsearch 8.6.2 with jmorphy plugin (#169)
+
 ## v0.153.1 (2023-05-11)
 
 ### Fix
