@@ -1,6 +1,6 @@
-FROM alpine as build
+FROM alpine:3.16 as build
 
-WORKDIR artifacts
+WORKDIR /artifacts
 
 RUN wget -q https://github.com/allure-framework/allurectl/releases/download/2.8.1/allurectl_linux_386 -O ./allurectl && \
     chmod +x ./allurectl && \
@@ -34,7 +34,5 @@ RUN set -ex && \
 COPY --from=build --chown=runner:runner /artifacts /home/runner
 
 WORKDIR /home/runner
-
-RUN ls -al
 
 USER runner
