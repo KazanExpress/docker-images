@@ -4,11 +4,13 @@ WORKDIR /artifacts
 
 RUN wget -q https://github.com/allure-framework/allurectl/releases/download/2.8.1/allurectl_linux_386 -O ./allurectl && \
     chmod +x ./allurectl && \
-    wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
+    wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O google-chrome-stable_current_amd64.deb && \
     wget -q https://github.com/qa-guru/allure-notifications/releases/download/4.2.1/allure-notifications-4.2.1.jar -O notifications.jar
 
 
 FROM summerwind/actions-runner-dind:v2.304.0-ubuntu-20.04
+
+COPY --from=build --chown=runner:runner /artifacts /home/runner
 
 USER root
 
@@ -28,10 +30,9 @@ RUN set -ex && \
     libasound2 \
     libu2f-udev \
     libvulkan1 \
-    xdg-utils && \
+    xdg-utils \
+    /home/runner/google-chrome-stable_current_amd64.deb && \
     rm -rf /var/lib/apt/lists/*
-
-COPY --from=build --chown=runner:runner /artifacts /home/runner
 
 WORKDIR /home/runner
 
