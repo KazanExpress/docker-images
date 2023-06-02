@@ -1,3 +1,13 @@
+## v0.156.0 (2023-06-02)
+
+### Fix
+
+- remove garbage
+
+### Feat
+
+- add sonarqube 9.9.1
+
 ## v0.155.0 (2023-05-17)
 
 ### Feat
