@@ -1,3 +1,9 @@
+## v0.157.0 (2023-06-05)
+
+### Feat
+
+- **github-runner**: new image with bumbed packages INFR-876 (#171)
+
 ## v0.156.0 (2023-06-02)
 
 ### Fix
