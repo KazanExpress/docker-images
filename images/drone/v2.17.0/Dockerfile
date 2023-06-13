@@ -1,8 +1,9 @@
 FROM golang:1.13.0 as builder
 
 WORKDIR /go/src/github.com/drone/drone
-RUN git clone https://github.com/harness/drone.git .
-RUN git checkout v2.17.0
+RUN git clone https://github.com/harness/drone.git . && \
+    git fetch --all --tags --prune && \
+    git checkout v2.17.0
 
 ENV GOOS linux
 ENV GOARCH amd64
@@ -13,6 +14,7 @@ RUN go build -tags nolimit -ldflags "-extldflags \"-static\"" -o release/linux/$
 
 
 FROM alpine:3.11 as alpine
+# hadolint ignore=DL3018
 RUN apk add -U --no-cache ca-certificates tzdata
 
 FROM alpine:3.11
