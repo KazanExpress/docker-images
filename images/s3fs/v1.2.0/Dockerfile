@@ -11,11 +11,11 @@ RUN apk --no-cache add \
     autoconf=2.71-r0 \ 
     automake=1.16.5-r0 \
     build-base=0.5-r3 \
-    ca-certificates=20211220-r0 \
-    curl-dev=7.83.1-r1 \
+    ca-certificates=20230506-r0 \
+    curl-dev=8.1.2-r0 \
     fuse-dev=2.9.9-r1 \
-    git=2.36.1-r0 \
-    libcurl=7.83.1-r1 \
+    git=2.36.6-r0 \
+    libcurl=8.1.2-r0 \
     libressl-dev=3.5.3-r0 \
     libxml2-dev=2.9.14-r0 && \
     git clone https://github.com/s3fs-fuse/s3fs-fuse.git
