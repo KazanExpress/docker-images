@@ -1,3 +1,9 @@
+## v0.160.0 (2023-07-12)
+
+### Feat
+
+- **elasticsearch**: :arrow_up: added image v7.16.3 (INFR-717)
+
 ## v0.159.0 (2023-06-21)
 
 ### Feat
