@@ -1,3 +1,9 @@
+## v0.161.0 (2023-07-21)
+
+### Feat
+
+- **kibana**: analyze ui plugin correct version (#186)
+
 ## v0.160.0 (2023-07-12)
 
 ### Feat
