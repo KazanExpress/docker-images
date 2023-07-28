@@ -1,16 +1,4 @@
-FROM alpine:3.16 as build
-
-WORKDIR /artifacts
-
-RUN wget -q https://github.com/allure-framework/allurectl/releases/download/2.9.1/allurectl_linux_386 -O ./allurectl && \
-    chmod +x ./allurectl && \
-    wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O google-chrome-stable_current_amd64.deb && \
-    wget -q https://github.com/qa-guru/allure-notifications/releases/download/4.2.1/allure-notifications-4.2.1.jar -O notifications.jar
-
-
-FROM summerwind/actions-runner-dind:v2.306.0-ubuntu-20.04
-
-COPY --from=build --chown=runner:runner /artifacts /home/runner
+FROM summerwind/actions-runner-dind:v2.307.1-ubuntu-20.04
 
 USER root
 
@@ -30,11 +18,13 @@ RUN set -ex && \
     libasound2 \
     libu2f-udev \
     libvulkan1 \
-    xdg-utils \
-    jq \
-    /home/runner/google-chrome-stable_current_amd64.deb && \
+    xdg-utils && \
     rm -rf /var/lib/apt/lists/*
 
-WORKDIR /home/runner
+RUN wget -q https://github.com/allure-framework/allurectl/releases/download/2.10.1/allurectl_linux_386 -O /home/runner/allurectl && \ 
+    chmod +x /home/runner/allurectl && \ 
+    chown runner:runner /home/runner/allurectl && \
+    wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
+    apt-get install -y --no-install-recommends ./google-chrome-stable_current_amd64.deb
 
 USER runner
