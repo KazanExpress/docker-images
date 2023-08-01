@@ -1,3 +1,9 @@
+## v0.163.0 (2023-08-01)
+
+### Feat
+
+- **drone**: add new version with fixed templates (#188)
+
 ## v0.162.0 (2023-07-28)
 
 ### Feat
