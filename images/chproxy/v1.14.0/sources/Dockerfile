@@ -7,7 +7,7 @@ WORKDIR /go/src/github.com/Vertamedia/chproxy
 COPY . ./
 RUN make release-build
 
-FROM alpine
+FROM alpine:3.18.3
 COPY --from=build /go/src/github.com/Vertamedia/chproxy/chproxy /chproxy
 ENTRYPOINT [ "/chproxy" ]
 CMD [ "--help" ]
