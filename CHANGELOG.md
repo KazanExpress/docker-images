@@ -1,3 +1,9 @@
+## v0.163.1 (2023-08-11)
+
+### Fix
+
+- images/tfnotify/v0.7.4/Dockerfile to reduce vulnerabilities (#193)
+
 ## v0.163.0 (2023-08-01)
 
 ### Feat
