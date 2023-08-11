@@ -1,3 +1,15 @@
+## v0.164.0 (2023-08-11)
+
+### Feat
+
+- **terragrunt**: update version to 0.48.7 and 1.5.5 (#194)
+
+## v0.163.1 (2023-08-11)
+
+### Fix
+
+- images/tfnotify/v0.7.4/Dockerfile to reduce vulnerabilities (#193)
+
 ## v0.163.0 (2023-08-01)
 
 ### Feat
