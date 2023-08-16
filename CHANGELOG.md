@@ -1,3 +1,9 @@
+## v0.168.0 (2023-08-16)
+
+### Feat
+
+- **android**: add sysctl command to tune fs.inotify.max_user_watches (#198)
+
 ## v0.167.0 (2023-08-16)
 
 ### Feat
