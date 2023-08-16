@@ -27,7 +27,7 @@ RUN set -eux; \
     unzip=6.0* \
     curl=7.74.* \
     jq=1.6-* \
-    procps=3.3* \
+    procps=2:3.3* \
     openjdk-${JAVA}-jdk-headless=${JAVA_VER} && \
 	rm -rf /var/lib/apt/lists/* && \
     wget -q https://dl.google.com/android/repository/commandlinetools-linux-${SDK_TOOLS}_latest.zip -O /tmp/tools.zip && \
