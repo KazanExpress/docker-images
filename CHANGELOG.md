@@ -1,3 +1,9 @@
+## v0.169.0 (2023-08-20)
+
+### Feat
+
+- add caddy with auth plugin
+
 ## v0.168.0 (2023-08-16)
 
 ### Feat
