@@ -2,7 +2,8 @@ FROM debian:bullseye-slim
 LABEL maintainer="Gaifullin Amir <gajjfullinai@gmail.com>"
 
 ENV JAVA "11"
-ENV JAVA_VER "11.0.16+8-1~deb11u1"
+ENV JAVA_VER "11.0.*"
+ENV JAVA_HOME "/usr/lib/jvm/java-${JAVA}-openjdk-amd64"
 ENV BUILD_TOOLS "33.0.0"
 ENV TARGET_SDK "33"
 ENV ANDROID_SDK_ROOT "/opt/sdk"
@@ -19,7 +20,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN set -eux; \
 	apt-get update; \
 	apt-get install -y --no-install-recommends \
-    ca-certificates=20210119 wget=1.21-1+deb11u1 unzip=6.0-26+deb11u1 curl=7.74.0-1.3+deb11u3 jq=1.6-2.1 openjdk-${JAVA}-jdk-headless=${JAVA_VER} && \
+    ca-certificates=20210119 wget=1.21* unzip=6.0* curl=7.74.* jq=1.6-* openjdk-${JAVA}-jdk-headless=${JAVA_VER} && \
 	rm -rf /var/lib/apt/lists/* && \
     wget -q https://dl.google.com/android/repository/commandlinetools-linux-${SDK_TOOLS}_latest.zip -O /tmp/tools.zip && \
     mkdir -p ${ANDROID_SDK_ROOT}/cmdline-tools && \
