@@ -3,6 +3,7 @@ LABEL maintainer="Gaifullin Amir <gajjfullinai@gmail.com>"
 
 ENV JAVA "17"
 ENV JAVA_VER "17.0.*"
+ENV JAVA_HOME "/usr/lib/jvm/java-${JAVA}-openjdk-amd64"
 ENV BUILD_TOOLS "33.0.1"
 ENV TARGET_SDK "33"
 ENV ANDROID_SDK_ROOT "/opt/sdk"
