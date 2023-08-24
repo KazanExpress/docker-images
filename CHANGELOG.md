@@ -1,3 +1,11 @@
+## v0.171.1 (2023-08-24)
+
+### Fix
+
+- jvm version
+- build image
+- add JAVA_HOME
+
 ## v0.171.0 (2023-08-22)
 
 ### Feat
