@@ -1,3 +1,9 @@
+## v0.173.0 (2023-08-25)
+
+### Feat
+
+- **maven**: add new image with parametrized repo urls (#205)
+
 ## v0.172.0 (2023-08-24)
 
 ### Feat
