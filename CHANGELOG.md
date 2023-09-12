@@ -1,3 +1,9 @@
+## v0.174.0 (2023-09-12)
+
+### Feat
+
+- **trino**: add image with fixed hudi INFR-1217 (#206)
+
 ## v0.173.0 (2023-08-25)
 
 ### Feat
