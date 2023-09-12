@@ -11,10 +11,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-FROM ghcr.io/airlift/jvmkill:latest AS jvmkill
+FROM ghcr.io/airlift/jvmkill@sha256:7297eb25c9011daee5f577784c82622e25d6c4ca16bbbb12079b56a186e8aebf AS jvmkill
 
 FROM alpine:3.18.3 as trino-build
-RUN apk add --update curl && \
+RUN apk add --no-cache curl>=8.2.1-r0 && \
     rm -rf /var/cache/apk/* && \
     curl -Lo ./trino.tar.gz https://github.com/KazanExpress/ke-infra-docker/releases/download/trino-v0.1.0/trino-v0.1.0.tar.gz && \
     mkdir trino && tar -xhzvf trino.tar.gz -C /trino   
@@ -27,7 +27,7 @@ RUN \
     echo 'Acquire::Retries "3";' > /etc/apt/apt.conf.d/80-retries && \
     echo 'Acquire::http::Timeout "15";' > /etc/apt/apt.conf.d/80-timeouts && \
     apt-get update -q && \
-    apt-get install -y -q less python3 curl && \
+    apt-get install -y -q --no-install-recommends less python3 curl && \
     rm -rf /var/lib/apt/lists/* && \
     update-alternatives --install /usr/bin/python python /usr/bin/python3 1 && \
     groupadd trino --gid 1000 && \
