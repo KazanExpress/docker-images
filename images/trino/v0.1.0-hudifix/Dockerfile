@@ -14,7 +14,7 @@
 FROM ghcr.io/airlift/jvmkill@sha256:7297eb25c9011daee5f577784c82622e25d6c4ca16bbbb12079b56a186e8aebf AS jvmkill
 
 FROM alpine:3.18.3 as trino-build
-RUN apk add --no-cache curl>=8.2.1-r0 && \
+RUN apk add --no-cache "curl>=8.2.1-r0" && \
     rm -rf /var/cache/apk/* && \
     curl -Lo ./trino.tar.gz https://github.com/KazanExpress/ke-infra-docker/releases/download/trino-v0.1.0/trino-v0.1.0.tar.gz && \
     mkdir trino && tar -xhzvf trino.tar.gz -C /trino   
