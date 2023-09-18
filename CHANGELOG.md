@@ -1,3 +1,11 @@
+## v0.175.1 (2023-09-18)
+
+### Fix
+
+- remove progress for wget
+- remove progress for wget
+- add yq to image
+
 ## v0.175.0 (2023-09-18)
 
 ### Fix
