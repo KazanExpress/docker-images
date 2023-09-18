@@ -11,7 +11,7 @@ RUN apt-get update && \
     jq \
     wget && \
     rm -rf /var/lib/apt/lists/* && \
-    wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /bin/yq && \
+    wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -Oq /bin/yq && \
     chmod +x /bin/yq && \
     chmod +x /bin/argocd-terraform-plugin && \
     chmod +x /bin/argocd-vault-plugin
