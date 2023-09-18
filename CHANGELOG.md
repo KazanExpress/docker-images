@@ -1,3 +1,13 @@
+## v0.175.0 (2023-09-18)
+
+### Fix
+
+- hadolint issues
+
+### Feat
+
+- add argocd with plugins and jq
+
 ## v0.174.0 (2023-09-12)
 
 ### Feat
