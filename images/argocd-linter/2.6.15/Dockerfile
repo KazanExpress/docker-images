@@ -8,9 +8,13 @@ USER root
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \ 
     curl \ 
-    jq && \
+    jq \
+    wget && \
     rm -rf /var/lib/apt/lists/* && \
+    wget -q https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /bin/yq && \
+    chmod +x /bin/yq && \
     chmod +x /bin/argocd-terraform-plugin && \
     chmod +x /bin/argocd-vault-plugin
+
 
 USER 999
