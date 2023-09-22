@@ -1,3 +1,9 @@
+## v0.178.0 (2023-09-22)
+
+### Feat
+
+- **superset**: add shillelagh and statsd in requirements.txt for superset (#210)
+
 ## v0.177.0 (2023-09-20)
 
 ### Feat
