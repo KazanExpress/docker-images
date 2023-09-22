@@ -11,3 +11,5 @@ crc32c~=2.3
 lunarcalendar==0.0.9
 tqdm~=4.63
 pystan<3.0
+statsd==4.0.1
+shillelagh==1.1.5
