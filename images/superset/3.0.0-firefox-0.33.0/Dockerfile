@@ -4,7 +4,6 @@ LABEL maintainer="Yuriy Gavrilin <yuriy@kazanexpress.ru>"
 
 USER root
 RUN apt-get update && \
-    apt-get install -y software-properties-common && \
     apt-get install -y firefox-esr libsnappy-dev && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
