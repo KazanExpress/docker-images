@@ -5,8 +5,6 @@ LABEL maintainer="Yuriy Gavrilin <yuriy@kazanexpress.ru>"
 USER root
 RUN apt-get update && \
     apt-get install -y software-properties-common && \
-#    add-apt-repository ppa:mozillateam/ppa -y && \
-#    apt-get install --no-install-recommends -y firefox-esr=91.13.0esr-1~deb11u1 libsnappy-dev=1.1.8-1 && \
     apt-get install -y firefox-esr libsnappy-dev && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
