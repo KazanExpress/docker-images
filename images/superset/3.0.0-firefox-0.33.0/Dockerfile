@@ -3,10 +3,10 @@ FROM apache/superset:3.0.0
 LABEL maintainer="Yuriy Gavrilin <yuriy@kazanexpress.ru>"
 
 USER root
-RUN apt-get update && \
-    apt-get search firefox-esr && \
-    apt-get search libsnappy-dev && \
-    apt-get install -y --no-install-recommends -y firefox-esr=115.3.1esr+build1-0ubuntu0.22.04.1~mt1 libsnappy-dev=1.1.8-1build3 && \
+RUN apt-get update
+    apt search firefox-esr
+    apt search libsnappy-dev
+RUN    apt-get install -y --no-install-recommends -y firefox-esr=115.3.1esr+build1-0ubuntu0.22.04.1~mt1 libsnappy-dev=1.1.8-1build3 && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
