@@ -1,3 +1,9 @@
+## v0.180.0 (2023-10-04)
+
+### Feat
+
+- **superset:2.1.1**: add new version of superset (#214)
+
 ## v0.179.0 (2023-10-04)
 
 ### Feat
