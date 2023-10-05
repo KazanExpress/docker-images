@@ -11,13 +11,13 @@ RUN apk --no-cache add \
     autoconf=2.71-* \ 
     automake=1.16.5-* \
     build-base=0.5-* \
-    ca-certificates=20211220-* \
-    curl-dev=7.83.1-* \
+    ca-certificates=20230506-* \
+    curl-dev=8.3.0-* \
     fuse-dev=2.9.9-* \
-    git=2.36.1-* \
-    libcurl=7.83.1-* \
-    libressl-dev=3.5.3-* \
-    libxml2-dev=2.9.14-* && \
+    git=2.40.1-* \
+    libcurl=8.3.0-* \
+    libressl-dev=3.7.3-* \
+    libxml2-dev=2.11.4-* && \
     git clone https://github.com/s3fs-fuse/s3fs-fuse.git
 
 WORKDIR /s3fs-fuse
@@ -49,12 +49,12 @@ COPY --from=build /usr/bin/s3fs /usr/bin/s3fs
 
 RUN mkdir /opt/s3fs && \
     apk --no-cache add \
-      ca-certificates=20211220-* \
+      ca-certificates=20230506-* \
       fuse=2.9.9-* \
-      libcurl=7.83.1-* \
+      libcurl=8.3.0-* \
       libgcc=11.2.1_git20220219-* \
       libstdc++=11.2.1_git20220219-* \
-      libxml2=2.9.14-* \
+      libxml2=2.11.4-* \
       tini=0.19.0-* && \
     s3fs --version
 
