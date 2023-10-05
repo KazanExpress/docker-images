@@ -7,17 +7,17 @@ ARG S3FS_VERSION=v1.86
 
 # Install s3fs-s3fs
 RUN apk --no-cache add \
-    alpine-sdk=1.0-* \
-    autoconf=2.71-* \ 
-    automake=1.16.5-* \
-    build-base=0.5-* \
-    ca-certificates=20230506-* \
-    curl-dev=8.3.0-* \
-    fuse-dev=2.9.9-* \
-    git=2.40.1-* \
-    libcurl=8.3.0-* \
-    libressl-dev=3.7.3-* \
-    libxml2-dev=2.11.4-* && \
+    alpine-sdk=1.0-r1 \
+    autoconf=2.71-r2 \ 
+    automake=1.16.5-r2 \
+    build-base=0.5-r3 \
+    ca-certificates=20230506-r0 \
+    curl-dev=8.3.0-r0 \
+    fuse-dev=2.9.9-r4 \
+    git=2.40.1-r0 \
+    libcurl=8.3.0-r0 \
+    libressl-dev=3.7.3-r0 \
+    libxml2-dev=2.11.4-r0 && \
     git clone https://github.com/s3fs-fuse/s3fs-fuse.git
 
 WORKDIR /s3fs-fuse
@@ -49,13 +49,13 @@ COPY --from=build /usr/bin/s3fs /usr/bin/s3fs
 
 RUN mkdir /opt/s3fs && \
     apk --no-cache add \
-      ca-certificates=20230506-* \
-      fuse=2.9.9-* \
-      libcurl=8.3.0-* \
-      libgcc=11.2.1_git20220219-* \
-      libstdc++=11.2.1_git20220219-* \
-      libxml2=2.11.4-* \
-      tini=0.19.0-* && \
+      ca-certificates=20230506-r0 \
+      fuse=2.9.9-r4 \
+      libcurl=8.3.0-r0 \
+      libgcc=12.2.1_git20220924-r10 \
+      libstdc++=12.2.1_git20220924-r10 \
+      libxml2=2.11.4-r0 \
+      tini=0.19.0-r1 && \
     s3fs --version
 
 # allow access to volume by different user to enable UIDs other than root when using volumes
