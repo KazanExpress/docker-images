@@ -16,7 +16,6 @@ RUN apk --no-cache add \
     fuse-dev=2.9.9-r4 \
     git=2.40.1-r0 \
     libcurl=8.3.0-r0 \
-    libressl-dev=3.7.3-r0 \
     libxml2-dev=2.11.4-r0 && \
     git clone https://github.com/s3fs-fuse/s3fs-fuse.git
 
