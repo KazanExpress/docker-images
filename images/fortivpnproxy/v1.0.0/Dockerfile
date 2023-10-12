@@ -7,8 +7,8 @@ ENV VPN_PASSWORD='YourPassword'
 
 # install components
 RUN apt-get update \
-    && apt-get install --yes --no-install-recommends openconnect network-manager-openconnect ocproxy curl openssh-client iputils-ping nginx \
-    && rm -rf /var/lib/{apt,dpkg,cache,log}
+  && apt-get install --yes --no-install-recommends openconnect network-manager-openconnect ocproxy curl openssh-client iputils-ping nginx \
+  && rm -rf /var/lib/{apt,dpkg,cache,log}
 
 WORKDIR /app
 
