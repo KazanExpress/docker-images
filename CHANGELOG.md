@@ -1,3 +1,20 @@
+## v0.183.1 (2023-10-13)
+
+### Fix
+
+- **superset**: fix superset mod for run.sh (#218)
+
+## v0.183.0 (2023-10-13)
+
+### Feat
+
+- fix readme INFR-875
+- add FortiVPN client with proxy INFR-875
+- add FortiVPN client with proxy INFR-875
+- add FortiVPN client with proxy INFR-875
+- add FortiVPN client with proxy INFR-875
+- add FortiVPN client with proxy INFR-875
+
 ## v0.182.0 (2023-10-13)
 
 ### Feat
