@@ -41,11 +41,11 @@ WORKDIR /app/superset-frontend
 
 ENV GIT_SSL_NO_VERIFY=1
 RUN git clone --depth 1 --branch 3.0.0 https://github.com/apache/superset.git /git/superset
-COPY ./src/superset/ /app
 RUN cp /git/superset/docker/frontend-mem-nag.sh / && /frontend-mem-nag.sh \
     && cp /git/superset/superset-frontend/package*.json ./ \
     && npm ci \
     && cp -Rf /git/superset/superset-frontend/* /app/superset-frontend 
+COPY ./src/superset/ /app
 
 # This seems to be the most expensive step
 RUN npm run ${BUILD_CMD}
