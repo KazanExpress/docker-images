@@ -1,3 +1,9 @@
+## v0.183.1 (2023-10-13)
+
+### Fix
+
+- **superset**: fix superset mod for run.sh (#218)
+
 ## v0.183.0 (2023-10-13)
 
 ### Feat
