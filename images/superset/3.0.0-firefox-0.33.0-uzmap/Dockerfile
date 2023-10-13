@@ -86,11 +86,12 @@ RUN mkdir -p ${PYTHONPATH} \
 
 ENV GIT_SSL_NO_VERIFY=1
 RUN git clone --depth 1 --branch 3.0.0 https://github.com/apache/superset.git /git/superset
-RUN mkdir /app/requirements && cp -Rf /git/superset/requirements/*.txt  /app/requirements/
-RUN cp /git/superset/setup.py /git/superset/MANIFEST.in /git/superset/README.md /app/
-RUN mkdir /app/superset-frontend && cp /git/superset/superset-frontend/package.json /app/superset-frontend/
-RUN mkdir /app/superset && cp -Rf /git/superset/superset/* /app/superset/
-RUN cp -Rf /git/superset/docker/run-server.sh /usr/bin/
+RUN mkdir /app/requirements && cp -Rf /git/superset/requirements/*.txt  /app/requirements/ && \
+    cp /git/superset/setup.py /git/superset/MANIFEST.in /git/superset/README.md /app/ && \
+    mkdir /app/superset-frontend && cp /git/superset/superset-frontend/package.json /app/superset-frontend/ && \
+    mkdir /app/superset && cp -Rf /git/superset/superset/* /app/superset/ && \
+    cp -Rf /git/superset/docker/run-server.sh /usr/bin/ && \
+    chmod 755 /usr/bin/run-server.sh
 
 RUN mkdir -p superset/static \
     && touch superset/static/version_info.json \
@@ -137,7 +138,6 @@ RUN curl -s -OJL https://github.com/mozilla/geckodriver/releases/download/v${GEC
     rm geckodriver-v${GECKODRIVER_VERSION}-linux64.tar.gz
 
 COPY requirements.txt /additional_requirements.txt
-#RUN pip install -U pip
 RUN pip install --no-cache --no-cache-dir -r /additional_requirements.txt
     #pip install --no-cache --no-cache-dir prophet==1.1.5
     # pip install --no-cache --no-cache-dir --force-reinstall git+https://github.com/benoitc/gunicorn.git@1efc5d91fa3dd2fad54cb931a9f7473499de5165
