@@ -1,3 +1,9 @@
+## v0.182.0 (2023-10-13)
+
+### Feat
+
+- **superset:uzmaps**: add uz geo maps to superset 3.0.0 (#216)
+
 ## v0.181.0 (2023-10-06)
 
 ### Feat
