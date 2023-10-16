@@ -1,3 +1,9 @@
+## v0.185.0 (2023-10-16)
+
+### Feat
+
+- add maven:3.9.4-amazoncorretto-21-debian (#222)
+
 ## v0.184.0 (2023-10-16)
 
 ### Feat
