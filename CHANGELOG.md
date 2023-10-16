@@ -1,3 +1,9 @@
+## v0.184.0 (2023-10-16)
+
+### Feat
+
+- add ssh-agent to maven with jdk-21 (#221)
+
 ## v0.183.2 (2023-10-13)
 
 ### Fix
