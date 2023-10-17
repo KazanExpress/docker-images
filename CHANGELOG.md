@@ -1,3 +1,9 @@
+## v0.187.0 (2023-10-17)
+
+### Feat
+
+- **elasticsearch**: build elasticsearch 8.8.2 with ltr plugin
+
 ## v0.186.1 (2023-10-16)
 
 ### Fix
