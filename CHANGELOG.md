@@ -1,3 +1,9 @@
+## v0.189.0 (2023-11-08)
+
+### Feat
+
+- **image:superset:custom**: add custom superset - inc rowlimit (#227)
+
 ## v0.188.0 (2023-10-18)
 
 ## v0.187.0 (2023-10-17)
