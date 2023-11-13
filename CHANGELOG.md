@@ -1,3 +1,13 @@
+## v0.190.0 (2023-11-13)
+
+### Fix
+
+- remove multiple run
+
+### Feat
+
+- add k6 images
+
 ## v0.189.0 (2023-11-08)
 
 ### Feat
