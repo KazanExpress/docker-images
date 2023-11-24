@@ -59,11 +59,11 @@ cat > /etc/logrotate.d/suricata <<EOF
 EOF
 
 # init script for dumb-init
+# no $var escapes there
 cat > /etc/rc.local <<EOF
 #!/bin/sh
 
-nic=wg0
-ifconfig $nic && suricata --af-packet -D -i $nic
+ifconfig wg0 && suricata --af-packet -D -i wg0
 
 # for suricata-update and logrotate
 crond
