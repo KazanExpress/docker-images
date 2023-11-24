@@ -29,6 +29,18 @@ done; unset source
 
 suricata-update
 
+cat > /etc/periodic/hourly/suricata-update <<EOF
+#!/bin/sh
+
+suricata-update
+EXITVALUE=$?
+if [ $EXITVALUE != 0 ]; then
+    /usr/bin/logger -t suricata-update "error: could not update suricata rules from cron job with [$EXITVALUE]"
+fi
+exit 0
+EOF
+chmod +x /etc/periodic/hourly/suricata-update
+
 cat > /etc/logrotate.d/suricata <<EOF
 /var/log/suricata/*.json {
     hourly

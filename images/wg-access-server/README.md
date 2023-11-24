@@ -40,12 +40,13 @@ _from the host_
 
 	ls -lF /var/lib/docker/volumes/wg-access-server-data/_data/suricata*
 
-and then use your own config
+and then use your own configs
 
 		-v /opt/suricata/suricata.yaml:/etc/suricata/suricata.yaml \
 		-v /opt/suricata/suricata.local:/etc/suricata/suricata.local \
+		-v /opt/suricata/disable.conf:/etc/suricata/disable.conf \
 
-also share `/var/log/suricata/` with the docker host (fluentbit cannot be installed into alpine)
+also share resulting logs with the docker host (fluentbit cannot be installed into alpine)
 if you plan to parse `eve.json`
 
 		-v /opt/suricata/log:/var/log/suricata \

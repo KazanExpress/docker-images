@@ -1,5 +1,5 @@
 
-FROM ghcr.io/freifunkmuc/wg-access-server
+FROM ghcr.io/freifunkmuc/wg-access-server:latest
 
 COPY install.sh /root/
 RUN /root/install.sh
