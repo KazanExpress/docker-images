@@ -1,8 +1,12 @@
 #!/bin/sh
 set -e
 
-# should not override existing /etc/suricata/suricata.yaml
+# we can write /etc/suricata/suricata.yaml safely as this is just an image
+# it can be mapped as a volume at run time
 apk add --no-cache suricata logrotate dcron dumb-init
+mv -i /etc/suricata/suricata.yaml /etc/suricata/suricata.yaml.dist
+sed -r '/[[:space:]]*#/d; /^$/d' /etc/suricata/suricata.yaml.dist > /etc/suricata/suricata.yaml.clean
+sed -r '/[[:space:]]*#/d; /^$/d' /etc/suricata/suricata.yaml.dist > /etc/suricata/suricata.yaml
 ln -s /etc/suricata/suricata.yaml /root/suricata.yaml
 
 suricata-update update-sources
@@ -29,15 +33,12 @@ done; unset source
 
 suricata-update
 
+# beware of escapes
 cat > /etc/periodic/hourly/suricata-update <<EOF
 #!/bin/sh
 
-suricata-update
-EXITVALUE=$?
-if [ $EXITVALUE != 0 ]; then
-    /usr/bin/logger -t suricata-update "error: could not update suricata rules from cron job with [$EXITVALUE]"
-fi
-exit 0
+suricata-update >/dev/null || echo error: could not update suricata rules from cron job
+
 EOF
 chmod +x /etc/periodic/hourly/suricata-update
 
@@ -50,8 +51,7 @@ cat > /etc/logrotate.d/suricata <<EOF
     create
     sharedscripts
     postrotate
-            #/bin/kill -HUP `cat /var/run/suricata.pid 2>/dev/null` 2>/dev/null || true
-            /bin/kill -HUP `pgrep suricata`
+            /bin/kill -HUP `cat /var/run/suricata.pid 2>/dev/null` 2>/dev/null || true
     endscript
 }
 
@@ -64,8 +64,7 @@ cat > /etc/logrotate.d/suricata <<EOF
     create
     sharedscripts
     postrotate
-            #/bin/kill -HUP `cat /var/run/suricata.pid 2>/dev/null` 2>/dev/null || true
-            /bin/kill -HUP `pgrep suricata`
+            /bin/kill -HUP `cat /var/run/suricata.pid 2>/dev/null` 2>/dev/null || true
     endscript
 }
 EOF
