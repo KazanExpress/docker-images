@@ -48,7 +48,7 @@ and then use your own config
 also share `/var/log/suricata/` with the docker host (fluentbit cannot be installed into alpine)
 if you plan to parse `eve.json`
 
-		-v /var/log/suricata:/var/log/suricata \
+		-v /opt/suricata/log:/var/log/suricata \
 
 ## resources
 

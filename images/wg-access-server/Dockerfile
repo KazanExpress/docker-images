@@ -1,8 +1,8 @@
 
 FROM ghcr.io/freifunkmuc/wg-access-server
 
-COPY install.bash /root/
-RUN /root/install.bash
+COPY install.sh /root/
+RUN /root/install.sh
 
 ENTRYPOINT ["/usr/bin/dumb-init", "--"]
 CMD ["/bin/sh", "-c", "/etc/rc.local"]
