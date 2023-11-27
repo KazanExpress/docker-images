@@ -3,7 +3,7 @@ set -e
 
 # we can write /etc/suricata/suricata.yaml safely as this is just an image
 # it can be mapped as a volume at run time
-apk add --no-cache suricata logrotate dcron dumb-init
+apk add --no-cache suricata logrotate dcron dumb-init bind-tools
 mv -i /etc/suricata/suricata.yaml /etc/suricata/suricata.yaml.dist
 sed -r '/[[:space:]]*#/d; /^$/d' /etc/suricata/suricata.yaml.dist > /etc/suricata/suricata.yaml.clean
 sed -r '/[[:space:]]*#/d; /^$/d' /etc/suricata/suricata.yaml.dist > /etc/suricata/suricata.yaml
@@ -31,7 +31,8 @@ for source in \
 	suricata-update enable-source $source
 done; unset source
 
-suricata-update
+echo -n updating rules ...
+suricata-update >/dev/null && echo done || echo error: failed to update rules
 
 # beware of escapes
 cat > /etc/periodic/hourly/suricata-update <<EOF
