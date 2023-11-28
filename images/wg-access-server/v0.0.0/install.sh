@@ -6,7 +6,7 @@ set -e
 apk add --no-cache suricata logrotate dcron dumb-init bind-tools
 mv -i /etc/suricata/suricata.yaml /etc/suricata/suricata.yaml.dist
 sed -r '/[[:space:]]*#/d; /^$/d' /etc/suricata/suricata.yaml.dist > /etc/suricata/suricata.yaml.clean
-sed -r '/[[:space:]]*#/d; /^$/d' /etc/suricata/suricata.yaml.dist > /etc/suricata/suricata.yaml
+sed -r 's/eth[0-9]/wg0/g' /etc/suricata/suricata.yaml.clean > /etc/suricata/suricata.yaml
 ln -s /etc/suricata/suricata.yaml /root/suricata.yaml
 
 suricata-update update-sources
@@ -34,11 +34,13 @@ done; unset source
 echo -n updating rules ...
 suricata-update >/dev/null && echo done || echo error: failed to update rules
 
-# beware of escapes
+# no $var escapes there
 cat > /etc/periodic/hourly/suricata-update <<EOF
 #!/bin/sh
 
-suricata-update >/dev/null || echo error: could not update suricata rules from cron job
+suricata-update >/dev/null \
+	&& kill -USR2 `cat /var/run/suricata.pid 2>/dev/null` \
+	|| echo error: could not update suricata rules from cron job
 
 EOF
 chmod +x /etc/periodic/hourly/suricata-update
