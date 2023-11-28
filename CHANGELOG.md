@@ -1,3 +1,19 @@
+## v0.193.0 (2023-11-28)
+
+### Fix
+
+- reload rules after logrotate
+- with version tag folder
+- **wg-and-suricata**: enable rules update cron
+- **wg-and-suricata**: add suricata-update cron job
+- **wg-and-suricata**: keep container logs in /opt/suricata/log/
+- **wg-and-suricata**: better description
+- **wg-with-suricata**: fix $var escapes
+
+### Feat
+
+- **wg-and-suricata**: custom image with added suricata
+
 ## v0.192.0 (2023-11-27)
 
 ## v0.191.0 (2023-11-13)
