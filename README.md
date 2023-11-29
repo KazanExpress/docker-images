@@ -1,8 +1,8 @@
-# KazanExpress Docker Images
+# Uzum.Market Docker Images
 
 This repository contains dockerfiles and builds public docker images from them.
 
-Check available docker images [here](https://github.com/orgs/KazanExpress/packages?repo_name=ke-infra-docker).
+Check available docker images [here](https://github.com/orgs/daymarket/packages?repo_name=ke-infra-docker).
 
 ## Instructions
 
@@ -32,9 +32,9 @@ images
 After pushing a new tag, GitHub Actions will build and push these docker images:
 
 ```txt
-ghcr.io/kazanexpress/commitizen:v2
-ghcr.io/kazanexpress/kafka-connect:v1.6.1
-ghcr.io/kazanexpress/github-cli:v1
+ghcr.io/daymarket/commitizen:v2
+ghcr.io/daymarket/kafka-connect:v1.6.1
+ghcr.io/daymarket/github-cli:v1
 ```
 
 ## Conventions

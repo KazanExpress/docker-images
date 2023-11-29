@@ -10,8 +10,8 @@ while IFS= read -r dir; do
 	image=$(basename "$(dirname "$dir")")
 	tag=$(basename "$dir")
 
-	docker build --tag "ghcr.io/kazanexpress/$image:$tag" --tag "ghcr.io/kazanexpress/$image:latest" .
-	docker push --all-tags ghcr.io/kazanexpress/$image
+	docker build --tag "ghcr.io/daymarket/$image:$tag" --tag "ghcr.io/daymarket/$image:latest" .
+	docker push --all-tags ghcr.io/daymarket/$image
 
 	cd - >/dev/null
 done <<<"$dirs"
