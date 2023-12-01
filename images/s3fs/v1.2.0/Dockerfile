@@ -1,5 +1,5 @@
 # Multi-stage build
-FROM alpine:3.16.0 AS build
+FROM alpine:3.18.5 AS build
 
 LABEL maintainer="Yuriy Gavrilin <yuriy@kazanexpress.ru>"
 
@@ -29,7 +29,7 @@ RUN git checkout tags/${S3FS_VERSION} && \
   make install
 
 
-FROM alpine:3.16.0
+FROM alpine:3.18.5
 
 ENV AWS_S3_URL='http://storage.yandexcloud.net'
 ENV AWS_S3_BUCKET='default'
