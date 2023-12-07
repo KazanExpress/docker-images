@@ -38,6 +38,8 @@ suricata-update >/dev/null && echo done || echo error: failed to update rules
 cat > /etc/periodic/hourly/suricata-update <<EOF
 #!/bin/sh
 
+suricata-update update-sources >/dev/null
+
 suricata-update >/dev/null \
 	&& kill -USR2 `cat /var/run/suricata.pid 2>/dev/null` \
 	|| echo error: could not update suricata rules from cron job
