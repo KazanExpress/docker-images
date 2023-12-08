@@ -7,7 +7,7 @@ ARG S3FS_VERSION=v1.86
 
 # Install s3fs-s3fs
 RUN apk --no-cache add \
-    alpine-sdk=1.0-* 
+    alpine-sdk=1.0-r1 
 RUN apk --no-cache add \
     autoconf=2.71-* \ 
     automake=1.16.5-* \
