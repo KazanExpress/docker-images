@@ -10,15 +10,17 @@ RUN apk --no-cache add \
     alpine-sdk=1.0-r1 \
     autoconf=2.71-r2 \ 
     automake=1.16.5-r2 \
-    build-base=0.5-r3 \
+    build-base=0.5-r3 
+
+RUN apk --no-cache add \
     ca-certificates=20230506-r0 \
     curl-dev=8.5.0-r0 \
     fuse-dev=2.9.9-r4 \
     git=2.40.1-r0 \
     libcurl=8.5.0-r0 \
     libressl-dev=3.7.3-r0 \
-    libxml2-dev=2.11.6-r0
-RUN  git clone https://github.com/s3fs-fuse/s3fs-fuse.git
+    libxml2-dev=2.11.6-r0 \ 
+    git clone https://github.com/s3fs-fuse/s3fs-fuse.git
 
 WORKDIR /s3fs-fuse
 
