@@ -7,7 +7,8 @@ ARG S3FS_VERSION=v1.86
 
 # Install s3fs-s3fs
 RUN apk --no-cache add \
-    alpine-sdk=1.0-* \
+    alpine-sdk=1.0-* 
+RUN apk --no-cache add \
     autoconf=2.71-* \ 
     automake=1.16.5-* \
     build-base=0.5-* \
@@ -17,9 +18,8 @@ RUN apk --no-cache add \
     git=2.40.1-* \
     libcurl=8.5.0-* \
     libressl-dev=3.7.3-* \
-    libxml2-dev=2.11.6-*
-
-RUN  git clone https://github.com/s3fs-fuse/s3fs-fuse.git
+    libxml2-dev=2.11.6-* && \
+    git clone https://github.com/s3fs-fuse/s3fs-fuse.git
 
 WORKDIR /s3fs-fuse
 
