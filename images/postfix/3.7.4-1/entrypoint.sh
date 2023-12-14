@@ -5,6 +5,7 @@ set -e # exit on error
 export ACCEPTED_NETWORKS=${ACCEPTED_NETWORKS:-"192.168.0.0/16 172.16.0.0/12 10.0.0.0/8"}
 export USE_TLS=${USE_TLS:-"no"}
 export TLS_VERIFY=${TLS_VERIFY:-"may"}
+export TLS_WRAPPERMODE=${TLS_WRAPPERMODE:-"no"}
 
 # Render template and write postfix main config
 cat <<- EOF > /etc/postfix/main.cf
@@ -27,6 +28,7 @@ cat <<- EOF > /etc/postfix/main.cf
 	smtp_sasl_security_options = noanonymous
 	smtp_tls_CAfile = /etc/ssl/certs/ca-certificates.crt
 	smtp_tls_security_level = $TLS_VERIFY
+	smtp_tls_wrappermode = $TLS_WRAPPERMODE
 	smtp_tls_session_cache_database = lmdb:\$data_directory/smtp_scache
 	smtp_use_tls = $USE_TLS
 	# MAIL FROM restrictions
