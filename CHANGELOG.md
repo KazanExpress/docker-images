@@ -1,3 +1,9 @@
+## v0.199.2 (2023-12-20)
+
+### Fix
+
+- **jiralert**: add multistage build INFR-1383 (#241)
+
 ## v0.199.1 (2023-12-20)
 
 ### Fix
