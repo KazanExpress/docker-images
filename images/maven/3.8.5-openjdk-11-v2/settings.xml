@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+    <servers>
+        <server>
+            <id>ke-repo-public</id>
+            <username>${env.SERVER_USERNAME}</username>
+            <password>${env.SERVER_PASSWORD}</password>
+        </server>
+        <server>
+            <id>ke-repo-releases</id>
+            <username>${env.SERVER_USERNAME}</username>
+            <password>${env.SERVER_PASSWORD}</password>
+        </server>
+        <server>
+            <id>ke-repo-snapshots</id>
+            <username>${env.SERVER_USERNAME}</username>
+            <password>${env.SERVER_PASSWORD}</password>
+        </server>
+    </servers>
+
+    <mirrors>
+        <mirror>
+            <id>ke-repo-public</id>
+            <name>KE repository proxy</name>
+            <mirrorOf>*</mirrorOf>
+            <url>${env.PUBLIC_REPO}</url>
+        </mirror>
+    </mirrors>
+
+    <profiles>
+        <profile>
+            <id>KE</id>
+            <repositories>
+                <repository>
+                    <id>ke-repo-releases</id>
+                    <name>Repository for KE RELEASES</name>
+                    <url>${env.RELEASE_REPO}</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </repository>
+                <repository>
+                    <id>ke-repo-snapshots</id>
+                    <name>Repository for KE SNAPSHOTS</name>
+                    <url>${env.SNAPSHOT_REPO}</url>
+                    <releases>
+                        <enabled>false</enabled>
+                        <updatePolicy>always</updatePolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+            </repositories>
+        </profile>
+    </profiles>
+
+    <activeProfiles>
+        <activeProfile>KE</activeProfile>
+    </activeProfiles>
+</settings>
