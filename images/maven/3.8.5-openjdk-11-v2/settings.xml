@@ -43,6 +43,7 @@
                     <snapshots>
                         <enabled>false</enabled>
                     </snapshots>
+                    <layout>default</layout>
                 </repository>
                 <repository>
                     <id>ke-repo-snapshots</id>
@@ -55,6 +56,7 @@
                     <snapshots>
                         <enabled>true</enabled>
                     </snapshots>
+                    <layout>default</layout>
                 </repository>
             </repositories>
         </profile>
@@ -64,4 +66,3 @@
         <activeProfile>KE</activeProfile>
     </activeProfiles>
 </settings>
-
