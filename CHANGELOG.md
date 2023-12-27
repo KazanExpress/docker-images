@@ -1,3 +1,9 @@
+## v0.199.6 (2023-12-27)
+
+### Fix
+
+- Create maven jdk11 parameterized (#244)
+
 ## v0.199.5 (2023-12-26)
 
 ### Fix
