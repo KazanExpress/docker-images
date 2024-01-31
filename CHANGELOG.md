@@ -1,3 +1,9 @@
+## v0.205.0 (2024-01-31)
+
+### Feat
+
+- **maven**: add new nexus to 3.9.5-amazoncorretto-21-debian
+
 ## v0.204.1 (2024-01-25)
 
 ### Fix
