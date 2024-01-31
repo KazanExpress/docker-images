@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+  <servers>
+    <server>
+      <id>ke-repo-releases-proxy</id>
+      <username>${env.SERVER_USERNAME}</username>
+      <password>${env.SERVER_PASSWORD}</password>
+    </server>
+    <server>
+      <id>ke-repo-releases</id>
+      <username>${env.SERVER_USERNAME}</username>
+      <password>${env.SERVER_PASSWORD}</password>
+    </server>
+    <server>
+      <id>ke-repo-snapshots</id>
+      <username>${env.SERVER_USERNAME}</username>
+      <password>${env.SERVER_PASSWORD}</password>
+    </server>
+    <server>
+      <id>ke-yc-snapshots</id>
+      <username>${env.SERVER_USERNAME}</username>
+      <password>${env.SERVER_PASSWORD}</password>
+    </server>
+    <server>
+      <id>ke-yc-releases</id>
+      <username>${env.SERVER_USERNAME}</username>
+      <password>${env.SERVER_PASSWORD}</password>
+    </server>
+  </servers>
+
+  <mirrors>
+    <mirror>
+      <id>ke-repo-releases-proxy</id>
+      <name>Nexus Public</name>
+      <mirrorOf>*</mirrorOf>
+      <url>https://nexus.infra.cluster.kznexpess.com/repository/maven-public/</url>
+    </mirror>
+  </mirrors>
+</settings>
