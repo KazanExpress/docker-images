@@ -1,3 +1,9 @@
+## v0.206.0 (2024-02-01)
+
+### Feat
+
+- add maven images for with protobuf (#252)
+
 ## v0.205.0 (2024-01-31)
 
 ### Feat
