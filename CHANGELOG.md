@@ -1,3 +1,9 @@
+## v0.208.0 (2024-03-04)
+
+### Feat
+
+- **wg-access-server**: wg-access-server + suricata
+
 ## v0.207.0 (2024-02-17)
 
 ### Feat
