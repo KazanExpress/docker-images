@@ -1,0 +1,9 @@
+
+tag=v0.11.0
+
+cd $tag/
+
+# repository name must be lowercase
+docker build -t ghcr.io/kazanexpress/wg-access-server:$tag ./
+docker push ghcr.io/kazanexpress/wg-access-server:$tag
+
