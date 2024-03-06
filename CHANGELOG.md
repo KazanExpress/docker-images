@@ -1,3 +1,9 @@
+## v0.208.1 (2024-03-06)
+
+### Fix
+
+- **wg-access-server**: same versioning as upstream
+
 ## v0.208.0 (2024-03-04)
 
 ### Feat
