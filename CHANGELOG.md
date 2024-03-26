@@ -1,3 +1,9 @@
+## v0.208.2 (2024-03-26)
+
+### Refactor
+
+- **wg-access-server**: rm build file, move readme (#260)
+
 ## v0.208.1 (2024-03-06)
 
 ### Fix
