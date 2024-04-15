@@ -1,3 +1,9 @@
+## v0.210.0 (2024-04-15)
+
+### Feat
+
+- update chrome for puppeteer
+
 ## v0.209.0 (2024-04-11)
 
 ### Feat
