@@ -16,4 +16,6 @@ RUN set -ex && \
     apk add --allow-untrusted --no-cache "glab_${GITLAB_CLI_VERSION}_Linux_x86_64.apk" && \
     rm -rf "glab_${GITLAB_CLI_VERSION}_Linux_x86_64.apk"
 
+ENTRYPOINT [ "glab" ]
+
 CMD ["glab", "--version"]
