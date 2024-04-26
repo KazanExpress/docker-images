@@ -1,3 +1,15 @@
+## v0.211.0 (2024-04-26)
+
+### Fix
+
+- entrypoint
+- hadolint
+- hadolint
+
+### Feat
+
+- add gitlab-cli v1.40.0 image
+
 ## v0.210.0 (2024-04-15)
 
 ### Feat
