@@ -14,3 +14,4 @@ RUN apt-get update && apt-get install -y --no-install-recommends curl git unzip 
 # Установка с аргументом версии
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN curl -fsSL https://raw.githubusercontent.com/leoafarias/fvm/main/scripts/install.sh | bash -s "$FVM_VERSION"
+RUN dart pub global activate melos
