@@ -1,3 +1,9 @@
+## v0.218.1 (2024-05-30)
+
+### Fix
+
+- **bitnami-git**: add Dockerfile file (#270)
+
 ## v0.218.0 (2024-05-30)
 
 ### Feat
