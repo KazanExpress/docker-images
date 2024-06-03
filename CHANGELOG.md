@@ -1,3 +1,9 @@
+## v0.219.0 (2024-06-03)
+
+### Feat
+
+- **drone-runner-docker**: mirror image (#271)
+
 ## v0.218.1 (2024-05-30)
 
 ### Fix
