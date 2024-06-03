@@ -1,0 +1,1 @@
+FROM drone/drone-runner-docker:latest@sha256:407366e5ba1981481596e072d7e3b6a1b26b6b0d44c27cfda6b0dcef965727f8
