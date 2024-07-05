@@ -1,3 +1,9 @@
+## v0.219.1 (2024-07-05)
+
+### Fix
+
+- **wgas**: logrotate conf escape backtick
+
 ## v0.219.0 (2024-06-03)
 
 ### Feat
