@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 
 apk add --no-cache suricata logrotate dcron dumb-init bind-tools iputils-ping
@@ -47,8 +47,8 @@ done; unset source
 echo -n updating rules ...
 suricata-update >/dev/null && echo done
 
-# escape line continuations and graves
-cat > /etc/periodic/hourly/suricata-update <<EOF
+# WARNING ESCAPES ARE IN THERE
+cat > /etc/periodic/daily/suricata-update <<EOF
 #!/bin/sh
 
 suricata-update >/dev/null \\
@@ -58,7 +58,9 @@ suricata-update >/dev/null \\
 EOF
 chmod +x /etc/periodic/hourly/suricata-update
 
+# WARNING ESCAPES ARE IN THERE
 cat > /etc/logrotate.d/suricata <<EOF
+# no delaycompress
 /var/log/suricata/*.json {
     hourly
     rotate 1
@@ -67,7 +69,7 @@ cat > /etc/logrotate.d/suricata <<EOF
     create
     sharedscripts
     postrotate
-            /bin/kill -HUP `cat /var/run/suricata.pid 2>/dev/null` 2>/dev/null || true
+            /bin/kill -HUP \`cat /var/run/suricata.pid 2>/dev/null\`
     endscript
 }
 
@@ -80,7 +82,7 @@ cat > /etc/logrotate.d/suricata <<EOF
     create
     sharedscripts
     postrotate
-            /bin/kill -HUP `cat /var/run/suricata.pid 2>/dev/null` 2>/dev/null || true
+            /bin/kill -HUP \`cat /var/run/suricata.pid 2>/dev/null\`
     endscript
 }
 EOF
@@ -88,7 +90,7 @@ EOF
 # init script for dumb-init
 # no $var escapes there
 cat > /etc/rc.local <<EOF
-#!/bin/sh
+#!/bin/bash
 
 wg-access-server serve &
 
@@ -96,6 +98,7 @@ wg-access-server serve &
 # give it some time to start
 sleep 1
 
+rm -f /run/suricata.pid
 ifconfig wg0 && suricata --af-packet -D -i wg0
 
 # last daemon goes to foreground
@@ -107,7 +110,16 @@ chmod +x /etc/rc.local
 
 ln -s /etc/rc.local /root/rc.local
 
-cat >> /root/.bashrc <<EOF
-alias ll='ls --color=auto -alh'
+cat >> /etc/bash/bashrc <<EOF
+
+case "$-" in *i*)
+        alias ll='ls --color=auto -alh'
+        alias ls='ls --color=auto'
+        alias cp='cp -i'
+        alias mv='mv -i'
+        alias rm='rm -i'
+        ;;
+esac
+
 EOF
 
