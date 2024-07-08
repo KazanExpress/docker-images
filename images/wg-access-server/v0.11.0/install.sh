@@ -56,7 +56,7 @@ suricata-update >/dev/null \\
         || echo ERROR: could not update suricata rules from cron job
 
 EOF
-chmod +x /etc/periodic/hourly/suricata-update
+chmod +x /etc/periodic/daily/suricata-update
 
 # WARNING ESCAPES ARE IN THERE
 cat > /etc/logrotate.d/suricata <<EOF
