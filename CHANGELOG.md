@@ -1,3 +1,9 @@
+## v0.220.0 (2024-07-09)
+
+### Feat
+
+- exclude building failures (#275)
+
 ## v0.219.1 (2024-07-05)
 
 ### Fix
