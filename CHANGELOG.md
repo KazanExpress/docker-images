@@ -1,3 +1,9 @@
+## v0.221.0 (2024-07-10)
+
+### Feat
+
+- new image for build auction service
+
 ## v0.220.0 (2024-07-09)
 
 ### Feat
