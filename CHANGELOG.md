@@ -1,3 +1,9 @@
+## v0.222.0 (2024-07-31)
+
+### Feat
+
+- build custom image with YQ utility (not confuse with yandex query)
+
 ## v0.221.0 (2024-07-10)
 
 ### Feat
