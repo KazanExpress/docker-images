@@ -1,3 +1,10 @@
+## v0.224.0 (2024-08-01)
+
+### Feat
+
+- add helm push image
+- add helm push image
+
 ## v0.223.0 (2024-08-01)
 
 ### Feat
