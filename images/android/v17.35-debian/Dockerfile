@@ -3,7 +3,7 @@ LABEL maintainer="Gaifullin Amir <gajjfullinai@gmail.com>"
 
 ENV JAVA "17"
 ENV JAVA_VER "17.0.*"
-ENV JAVA_HOME "/usr/lib/jvm/java-${JAVA}-openjdk-arm64"
+ENV JAVA_HOME "/usr/lib/jvm/java-${JAVA}-openjdk-amd64"
 ENV GRADLE_VERSION "8.10"
 ENV GRADLE_HOME=/opt/gradle/gradle-${GRADLE_VERSION}
 ENV BUILD_TOOLS "35.0.0"
